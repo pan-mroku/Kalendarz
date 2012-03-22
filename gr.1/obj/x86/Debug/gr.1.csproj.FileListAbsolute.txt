@@ -1,0 +1,17 @@
+F:\io\k\gr.1\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\io\k\gr.1\obj\x86\Debug\gr._1.Properties.Resources.resources
+F:\io\k\gr.1\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\io\k\gr.1\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\io\k\gr.1\bin\Debug\gr.1.exe
+F:\io\k\gr.1\bin\Debug\gr.1.pdb
+F:\io\k\gr.1\obj\x86\Debug\gr.1.exe
+F:\io\k\gr.1\obj\x86\Debug\gr.1.pdb
+C:\Documents and Settings\st\Pulpit\k\k\gr.1\obj\x86\Debug\gr.1.exe
+C:\Documents and Settings\st\Pulpit\k\k\gr.1\obj\x86\Debug\gr.1.pdb
+C:\Documents and Settings\st\Pulpit\k\k\k\gr.1\obj\x86\Debug\gr.1.exe
+C:\Documents and Settings\st\Pulpit\k\k\k\gr.1\obj\x86\Debug\gr.1.pdb
+C:\Documents and Settings\st\Pulpit\k\k\k\gr.1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\st\Pulpit\k\k\k\gr.1\obj\x86\Debug\gr._1.Properties.Resources.resources
+C:\Documents and Settings\st\Pulpit\k\k\k\gr.1\obj\x86\Debug\gr.1.csproj.GenerateResource.Cache
+C:\Documents and Settings\st\Pulpit\k\k\k\gr.1\bin\Debug\gr.1.exe
+C:\Documents and Settings\st\Pulpit\k\k\k\gr.1\bin\Debug\gr.1.pdb
