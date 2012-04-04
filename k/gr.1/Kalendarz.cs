@@ -25,17 +25,17 @@ public class Kalendarz
             int dzien = Convert.ToInt32(sr.ReadLine());
             Data_dzien tmp_dzien = new Data_dzien(rok, miesiac, dzien); //tworzenie daty
 
-            //wczytywanie listy
+            //wczytywanie listy zdażeń
             List<Wpis> tmp_list = new List<Wpis>() { };
             while ((linia = sr.ReadLine()) != "-=NASTĘPNY WPIS=-")
             {
                 string tytuł = linia;
-                int godz_p = Convert.ToInt32(sr.ReadLine());
-                int min_p = Convert.ToInt32(sr.ReadLine());
+                int godz_p = Convert.ToInt32(sr.ReadLine()); //godzina - początek zdażenia
+                int min_p = Convert.ToInt32(sr.ReadLine()); //minuty - początek zdażenia
                 Data data_pocz = new Data(rok, miesiac, dzien, godz_p, min_p);
 
-                int godz_k = Convert.ToInt32(sr.ReadLine());
-                int min_k = Convert.ToInt32(sr.ReadLine());
+                int godz_k = Convert.ToInt32(sr.ReadLine()); //godzina - koniec zdażenia
+                int min_k = Convert.ToInt32(sr.ReadLine()); //minuty - koniec zdażenia
                 Data data_kon = new Data(rok, miesiac, dzien, godz_k, min_k);
                 tmp_list.Add(new Wpis(data_pocz, data_kon, tytuł));
             }
@@ -66,7 +66,7 @@ public class Kalendarz
                 sw.WriteLine(tmp_list[i].Poczatek().Godzina());
                 sw.WriteLine(tmp_list[i].Poczatek().Minuta());
                 sw.WriteLine(tmp_list[i].Koniec().Godzina());
-                sw.WriteLine(tmp_list[i].Koniec()  .Minuta());
+                sw.WriteLine(tmp_list[i].Koniec().Minuta());
             }
 
             sw.WriteLine("-=NASTĘPNY WPIS=-"); //separator
@@ -74,14 +74,34 @@ public class Kalendarz
     }
     public Data_dzien Dodaj(Wpis wpis)
     {
-        throw new System.Exception("Not implemented");
+        Data_dzien poczatek = (Data_dzien)wpis.Poczatek();
+        if (kalendarz.ContainsKey(poczatek)) //jeżeli wpis danego dnia już istnieje
+        {
+            kalendarz[poczatek].Add(wpis); //to dodaj do aktualnej listy
+        }
+        else
+        {
+            kalendarz.Add(poczatek, new List<Wpis>() { wpis }); //jeżeli danego dnia nie ma jeszcze wpisów to stwórz nową liste wpisów i dodaj wpis
+        }
+        return poczatek;
     }
     public List<Wpis> WpisyDnia(Data_dzien dzien)
     {
-        throw new System.Exception("Not implemented");
+        return kalendarz[dzien];
     }
     public Wpis SzukajWpis(string tytul)
     {
-        throw new System.Exception("Not implemented");
+        foreach (var listy in kalendarz.Values)
+        {
+            foreach (var wpis in listy)
+            {
+                if (wpis.Tytul() == tytul)
+                {
+                    return wpis;
+                }
+            }
+        }
+
+        return null; //jeżeli pętla nie zakończyła się wcześniej to znaczy, że takiego wpisu nie ma w kalendarzu
     }
 }

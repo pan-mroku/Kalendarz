@@ -36,6 +36,11 @@ public class Data : Data_dzien  {
 	public static bool operator!=(Data x, Data y) {
 		throw new System.Exception("Not implemented");
 	}
+    public static explicit operator Data_dzien(Data data)
+    {
+        Data_dzien data_dzien = new Data_dzien(data.Rok(), data.Miesiac(), data.Dzien());
+        return data_dzien;
+    }
 	public override bool Equals(object obj) {
 		throw new System.Exception("Not implemented");
 	}
