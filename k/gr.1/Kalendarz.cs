@@ -66,7 +66,7 @@ public class Kalendarz
                 sw.WriteLine(tmp_list[i].Poczatek().Godzina());
                 sw.WriteLine(tmp_list[i].Poczatek().Minuta());
                 sw.WriteLine(tmp_list[i].Koniec().Godzina());
-                sw.WriteLine(tmp_list[i].Koniec()  .Minuta());
+                sw.WriteLine(tmp_list[i].Koniec().Minuta());
             }
 
             sw.WriteLine("-=NASTĘPNY WPIS=-"); //separator
@@ -81,7 +81,7 @@ public class Kalendarz
         }
         else
         {
-            kalendarz.Add(poczatek, new List<Wpis>() {wpis}); //jeżeli danego dnia nie ma jeszcze wpisów to stwórz nową liste wpisów i dodaj wpis
+            kalendarz.Add(poczatek, new List<Wpis>() { wpis }); //jeżeli danego dnia nie ma jeszcze wpisów to stwórz nową liste wpisów i dodaj wpis
         }
         return poczatek;
     }
@@ -91,6 +91,17 @@ public class Kalendarz
     }
     public Wpis SzukajWpis(string tytul)
     {
-        throw new System.Exception("Not implemented");
+        foreach (var listy in kalendarz.Values)
+        {
+            foreach (var wpis in listy)
+            {
+                if (wpis.Tytul() == tytul)
+                {
+                    return wpis;
+                }
+            }
+        }
+
+        return null; //jeżeli pętla nie zakończyła się wcześniej to znaczy, że takiego wpisu nie ma w kalendarzu
     }
 }
