@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-
 public class Kalendarz
 {
     private Dictionary<Data_dzien, List<Wpis>> kalendarz;

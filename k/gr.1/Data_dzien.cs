@@ -1,4 +1,7 @@
 using System;
+
+public enum Dzien {poniedziałek=0, wtorek, środa, czwartek, piątek, sobota, niedziela};
+
 public class Data_dzien {
 	private int rok;
 	private int miesiac;
@@ -25,6 +28,12 @@ public class Data_dzien {
 	public static bool operator!=(Data_dzien x, Data_dzien y) {
 		throw new System.Exception("Not implemented");
 	}
+	public static Data_dzien operator+(Data_dzien x, int n) {
+		throw new System.Exception("Not implemented");
+	}
+    public static Data_dzien operator-(Data_dzien x, int n) {
+		throw new System.Exception("Not implemented");
+    }
 	public void Rok(int _rok) {
 		throw new System.Exception("Not implemented");
 	}
@@ -43,6 +52,9 @@ public class Data_dzien {
 	public int Dzien() {
 		throw new System.Exception("Not implemented");
 	}
+    public Dzien DzienTygodnia(){
+        throw new System.Exception("Not implemented");
+    }
 	public override bool Equals(object obj) {
 		throw new System.Exception("Not implemented");
 	}
