@@ -94,15 +94,15 @@ public class Wpis
     {
         return 0;
     }
-    public void Poczatek(Data _poczatek)
+    public void SetPoczatek(Data _poczatek)
     {
         this.poczatek = _poczatek;
     }
-    public void Koniec(Data _koniec)
+    public void SetKoniec(Data _koniec)
     {
         this.koniec = _koniec;
     }
-    public void Tytul(string _tytul)
+    public void SetTytul(string _tytul)
     {
         this.tytul = _tytul;
     }
