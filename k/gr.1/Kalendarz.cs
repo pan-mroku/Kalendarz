@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
+[Serializable]
 public class Kalendarz
 {
     private Dictionary<Data_dzien, List<Wpis>> kalendarz;
@@ -14,7 +16,14 @@ public class Kalendarz
 
     public void Wczytaj(string plik)
     {
-        StreamReader sr = new StreamReader(plik);
+        BinaryFormatter bf = new BinaryFormatter();
+        if (File.Exists(plik))
+        {
+            FileStream fs = new FileStream(plik, FileMode.Create);
+            kalendarz = (Dictionary<Data_dzien, List<Wpis>>)bf.Deserialize(fs);
+        }
+
+        /*StreamReader sr = new StreamReader(plik);
 
         string linia;
         while ((linia = sr.ReadLine()) != null)
@@ -42,10 +51,16 @@ public class Kalendarz
 
             kalendarz.Add(tmp_dzien, tmp_list);
         }
+         * */
     }
     public void Zapisz(string plik)
     {
-        StreamWriter sw = new StreamWriter(plik);
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream fs = new FileStream(plik, FileMode.Create);
+        bf.Serialize(fs, kalendarz);
+
+        /*
+         StreamWriter sw = new StreamWriter(plik);
 
         var nast = kalendarz.Keys.GetEnumerator();
         while (nast.MoveNext())
@@ -62,22 +77,34 @@ public class Kalendarz
             //zapisywanie listy wpisów do pliku
             for (int i = 0; i < ilość_wpisów; i++)
             {
-                sw.WriteLine(tmp_list[i].Tytul());
-                sw.WriteLine(tmp_list[i].Poczatek().Godzina());
-                sw.WriteLine(tmp_list[i].Poczatek().Minuta());
-                sw.WriteLine(tmp_list[i].Koniec().Godzina());
-                sw.WriteLine(tmp_list[i].Koniec().Minuta());
+                sw.WriteLine(tmp_list[i].Tytul);
+                sw.WriteLine(tmp_list[i].Poczatek.Godzina());
+                sw.WriteLine(tmp_list[i].Poczatek.Minuta());
+                sw.WriteLine(tmp_list[i].Koniec.Godzina());
+                sw.WriteLine(tmp_list[i].Koniec.Minuta());
             }
 
             sw.WriteLine("-=NASTĘPNY WPIS=-"); //separator
         }
+         */
     }
     public Data_dzien Dodaj(Wpis wpis)
     {
-        Data_dzien poczatek = (Data_dzien)wpis.Poczatek();
+        Data_dzien poczatek = (Data_dzien)wpis.Poczatek;
         if (kalendarz.ContainsKey(poczatek)) //jeżeli wpis danego dnia już istnieje
         {
-            kalendarz[poczatek].Add(wpis); //to dodaj do aktualnej listy
+            List<Wpis> wpisy_dnia = kalendarz[poczatek];
+
+            foreach (var tmp_wpis in wpisy_dnia) //sprawdź czy taki wpis już istnieje
+            {
+                if (tmp_wpis.Poczatek == wpis.Poczatek && tmp_wpis.Koniec == wpis.Koniec) //jeżeli istnieje to
+                {
+                    tmp_wpis.SetTytul(wpis.Tytul); //zmień nazwę
+                    return poczatek;
+                }
+            }
+
+            wpisy_dnia.Add(wpis); //jeżeli takiego wpisu jeszcze nie ma to do aktualnej listy            
         }
         else
         {
@@ -95,7 +122,7 @@ public class Kalendarz
         {
             foreach (var wpis in listy)
             {
-                if (wpis.Tytul() == tytul)
+                if (wpis.Tytul == tytul)
                 {
                     return wpis;
                 }
