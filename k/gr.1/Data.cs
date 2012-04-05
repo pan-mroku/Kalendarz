@@ -4,43 +4,51 @@ public class Data : Data_dzien  {
 	private int minuta;
 
 	public Data(int _rok, int _miesiac, int _dzien, int _godzina, int _minuta):base(_rok,_miesiac,_dzien) {
-		throw new System.Exception("Not implemented");
+        godzina = _godzina;
+        minuta = _minuta;
 	}
 	public void Godzina(int _godzina) {
-		throw new System.Exception("Not implemented");
+        godzina = _godzina;
 	}
 	public void Minuta(int _minuta) {
-		throw new System.Exception("Not implemented");
+        minuta = _minuta;
 	}
 	public int Godzina() {
-		throw new System.Exception("Not implemented");
+        return (godzina);
 	}
 	public int Minuta() {
-		throw new System.Exception("Not implemented");
+        return (minuta);
 	}
 	public static bool operator>(Data x, Data y) {
-		throw new System.Exception("Not implemented");
+        if ((x.Minuta() > y.Minuta()) && (x.Godzina() > y.Godzina()) && (x.Dzien() > y.Dzien()) && (x.Miesiac() > y.Miesiac()) && (x.Rok() > y.Rok())) return (true);
+        else return (false);
 	}
 	public static bool operator<=(Data x, Data y) {
-		throw new System.Exception("Not implemented");
+        if ((x.Minuta() <= y.Minuta()) && (x.Godzina() <= y.Godzina()) && (x.Dzien() <= y.Dzien()) && (x.Miesiac() <= y.Miesiac()) && (x.Rok() <= y.Rok())) return (true);
+        else return (false);
 	}
 	public static bool operator<(Data x, Data y) {
-		throw new System.Exception("Not implemented");
+        if ((x.Minuta() < y.Minuta()) && (x.Godzina() < y.Godzina()) && (x.Dzien() < y.Dzien()) && (x.Miesiac() < y.Miesiac()) && (x.Rok() < y.Rok())) return (true);
+        else return (false);
 	}
 	public static bool operator>=(Data x, Data y) {
-		throw new System.Exception("Not implemented");
+        if ((x.Minuta() >= y.Minuta()) && (x.Godzina() >= y.Godzina()) && (x.Dzien() >= y.Dzien()) && (x.Miesiac() >= y.Miesiac()) && (x.Rok() >= y.Rok())) return (true);
+        else return (false);
 	}
 	public static bool operator==(Data x, Data y) {
-		throw new System.Exception("Not implemented");
+        if ((x.Minuta() == y.Minuta()) && (x.Godzina() == y.Godzina()) && (x.Dzien() == y.Dzien()) && (x.Miesiac() == y.Miesiac()) && (x.Rok() == y.Rok())) return (true);
+        else return (false);
 	}
 	public static bool operator!=(Data x, Data y) {
-		throw new System.Exception("Not implemented");
+        if ((x.Minuta() != y.Minuta()) && (x.Godzina() != y.Godzina()) && (x.Dzien() != y.Dzien()) && (x.Miesiac() != y.Miesiac()) && (x.Rok() != y.Rok())) return (true);
+        else return (false);
 	}
 	public override bool Equals(object obj) {
-		throw new System.Exception("Not implemented");
+        if ((obj is Data) && (this == (Data)obj)) return (true);
+        else return (false);
 	}
 	public override int GetHashCode() {
-		throw new System.Exception("Not implemented");
+        return (base.GetHashCode() + godzina*60 + minuta);
 	}
 
 }
