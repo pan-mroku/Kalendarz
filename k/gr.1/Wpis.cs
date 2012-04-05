@@ -1,54 +1,135 @@
 using System;
-public class Wpis {
-	private Data poczatek;
-	private Data koniec;
-	private string tytul;
+public class Wpis
+{
+    private Data poczatek;
+    private Data koniec;
+    private string tytul;
 
-	public Wpis(Data _poczatek, Data _koniec, String _tytul) {
-		throw new System.Exception("Not implemented");
-	}
-	public static bool operator>(Wpis x, Wpis y) {
-		throw new System.Exception("Not implemented");
-	}
-	public static bool operator<=(Wpis x, Wpis y) {
-		throw new System.Exception("Not implemented");
-	}
-	public static bool operator<(Wpis x, Wpis y) {
-		throw new System.Exception("Not implemented");
-	}
-	public static bool operator>=(Wpis x, Wpis y) {
-		throw new System.Exception("Not implemented");
-	}
-	public static bool operator==(Wpis x, Wpis y) {
-		throw new System.Exception("Not implemented");
-	}
-	public static bool operator!=(Wpis x, Wpis y) {
-		throw new System.Exception("Not implemented");
-	}
-	public override bool Equals(object obj) {
-		throw new System.Exception("Not implemented");
-	}
-	public override int GetHashCode() {
-		throw new System.Exception("Not implemented");
-	}
-	public void Poczatek(Data _poczatek) {
-		throw new System.Exception("Not implemented");
-	}
-	public void Koniec(Data _koniec) {
-		throw new System.Exception("Not implemented");
-	}
-	public void Tytul(string _tytul) {
-		throw new System.Exception("Not implemented");
-	}
-	public Data Poczatek() {
-		throw new System.Exception("Not implemented");
-	}
-	public Data Koniec() {
-		throw new System.Exception("Not implemented");
-	}
-	public string Tytul() {
-		throw new System.Exception("Not implemented");
-	}
+    public Wpis(Data _poczatek, Data _koniec, String _tytul)
+    {
+        this.poczatek = _poczatek;
+        this.koniec = _koniec;
+        this.tytul = _tytul;
+    }
+    public static bool operator >(Wpis x, Wpis y)
+    {
+        if (x.poczatek > y.poczatek)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public static bool operator <=(Wpis x, Wpis y)
+    {
+        if (x.poczatek <= y.poczatek)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public static bool operator <(Wpis x, Wpis y)
+    {
+        if (x.poczatek < y.poczatek)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public static bool operator >=(Wpis x, Wpis y)
+    {
+        if (x.poczatek >= y.poczatek)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public static bool operator ==(Wpis x, Wpis y)
+    {
+        if (x.poczatek == y.poczatek)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public static bool operator !=(Wpis x, Wpis y)
+    {
+        if (x.poczatek != y.poczatek)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public override bool Equals(object obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+        Wpis a = obj as Wpis;
+        if ((System.Object)a == null)
+        {
+            return false;
+        }
+        return (this.tytul == a.tytul) && (this.poczatek == a.poczatek) && (this.koniec == a.koniec);
+    }
+    public override int GetHashCode()
+    {
+        return 0;
+    }
+    public void Poczatek(Data _poczatek)
+    {
+        this.poczatek = _poczatek;
+    }
+    public void Koniec(Data _koniec)
+    {
+        this.koniec = _koniec;
+    }
+    public void Tytul(string _tytul)
+    {
+        this.tytul = _tytul;
+    }
+    public Data Poczatek
+    {
+        get
+        {
+
+            return poczatek;
+        }
+
+    }
+    public Data Koniec
+    {
+        get
+        {
+            return koniec;
+        }
+
+    }
+    public string Tytul
+    {
+        get
+        {
+            return this.tytul;
+        }
+    }
 
 
 
