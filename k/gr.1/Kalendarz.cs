@@ -62,11 +62,11 @@ public class Kalendarz
             //zapisywanie listy wpisów do pliku
             for (int i = 0; i < ilość_wpisów; i++)
             {
-                sw.WriteLine(tmp_list[i].Tytul());
-                sw.WriteLine(tmp_list[i].Poczatek().Godzina());
-                sw.WriteLine(tmp_list[i].Poczatek().Minuta());
-                sw.WriteLine(tmp_list[i].Koniec().Godzina());
-                sw.WriteLine(tmp_list[i].Koniec().Minuta());
+                sw.WriteLine(tmp_list[i].Tytul);
+                sw.WriteLine(tmp_list[i].Poczatek.Godzina());
+                sw.WriteLine(tmp_list[i].Poczatek.Minuta());
+                sw.WriteLine(tmp_list[i].Koniec.Godzina());
+                sw.WriteLine(tmp_list[i].Koniec.Minuta());
             }
 
             sw.WriteLine("-=NASTĘPNY WPIS=-"); //separator
@@ -74,7 +74,7 @@ public class Kalendarz
     }
     public Data_dzien Dodaj(Wpis wpis)
     {
-        Data_dzien poczatek = (Data_dzien)wpis.Poczatek();
+        Data_dzien poczatek = (Data_dzien)wpis.Poczatek;
         if (kalendarz.ContainsKey(poczatek)) //jeżeli wpis danego dnia już istnieje
         {
             kalendarz[poczatek].Add(wpis); //to dodaj do aktualnej listy
@@ -95,7 +95,7 @@ public class Kalendarz
         {
             foreach (var wpis in listy)
             {
-                if (wpis.Tytul() == tytul)
+                if (wpis.Tytul == tytul)
                 {
                     return wpis;
                 }
