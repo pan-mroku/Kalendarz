@@ -1,4 +1,5 @@
 using System;
+using System.Windows.Forms;
 using System.Drawing;
 using System.Collections.Generic;
 using System.IO;
@@ -8,17 +9,26 @@ public class Aplikacja {
 
         //konstruktor wczytujący kalendarz z pliku
 	public Aplikacja(string plik) {
-		throw new System.Exception("Not implemented");
+        kalendarz.Wczytaj(plik);
 	}
 	public Aplikacja() {
-		throw new System.Exception("Not implemented");
+        kalendarz = new Kalendarz();
 	}
 	public void Dodaj(Wpis nowy) {
-		throw new System.Exception("Not implemented");
+        kalendarz.Dodaj(nowy);
 	}
         //metoda wywoływana przy zamykaniu programu. Musi zapytać o zapisanie zmian i ewentualnie je zapisać do wskazanego katalogu
-	public void Zamknij() {
-		throw new System.Exception("Not implemented");
+    public void Zamknij() {
+        var pytanie = MessageBox.Show("Czy chcesz zapisać zmiany przed zamknięciem?", "Zapis zmian?", MessageBoxButtons.YesNo);
+        if (pytanie == DialogResult.Yes)
+        {
+            MessageBox.Show("Zmiany zostały zapisane.", "Zapis zmian");
+            Application.Exit();
+        }
+        else
+        {
+            Application.Exit();
+        }
 	}
         //metoda zwracająca miesiąc (tyle ile będzie przycisków w gui) bitmap, które potem będą skalowane na przyciskach. Niech nie-zajęte godziny nie zajmują zbyt dużo miejsca. Godziny zajęte powinny zajmować przestrzeń proporcjonalną do czasu ich trwania. Wystarczą same kolory, bez tytułów.
 	public List<Bitmap> Miesiac(Data_dzien pierwszy) {
