@@ -52,9 +52,9 @@ public class Kalendarz
         {
             Data_dzien tmp = nast.Current;
             //zapisywanie daty
-            sw.WriteLine(tmp.Rok());
-            sw.WriteLine(tmp.Miesiac());
-            sw.WriteLine(tmp.Dzien());
+            sw.WriteLine(tmp.Rok);
+            sw.WriteLine(tmp.Miesiac);
+            sw.WriteLine(tmp.Dzien);
             //----------------------------
 
             List<Wpis> tmp_list = kalendarz[nast.Current];

@@ -20,27 +20,27 @@ public class Data : Data_dzien  {
         return (minuta);
 	}
 	public static bool operator>(Data x, Data y) {
-        if ((x.Minuta() > y.Minuta()) && (x.Godzina() > y.Godzina()) && (x.Dzien() > y.Dzien()) && (x.Miesiac() > y.Miesiac()) && (x.Rok() > y.Rok())) return (true);
+        if ((x.Minuta() > y.Minuta()) && (x.Godzina() > y.Godzina()) && (x.Dzien > y.Dzien) && (x.Miesiac > y.Miesiac) && (x.Rok > y.Rok)) return (true);
         else return (false);
 	}
 	public static bool operator<=(Data x, Data y) {
-        if ((x.Minuta() <= y.Minuta()) && (x.Godzina() <= y.Godzina()) && (x.Dzien() <= y.Dzien()) && (x.Miesiac() <= y.Miesiac()) && (x.Rok() <= y.Rok())) return (true);
+        if ((x.Minuta() <= y.Minuta()) && (x.Godzina() <= y.Godzina()) && (x.Dzien <= y.Dzien) && (x.Miesiac <= y.Miesiac) && (x.Rok <= y.Rok)) return (true);
         else return (false);
 	}
 	public static bool operator<(Data x, Data y) {
-        if ((x.Minuta() < y.Minuta()) && (x.Godzina() < y.Godzina()) && (x.Dzien() < y.Dzien()) && (x.Miesiac() < y.Miesiac()) && (x.Rok() < y.Rok())) return (true);
+        if ((x.Minuta() < y.Minuta()) && (x.Godzina() < y.Godzina()) && (x.Dzien < y.Dzien) && (x.Miesiac < y.Miesiac) && (x.Rok < y.Rok)) return (true);
         else return (false);
 	}
 	public static bool operator>=(Data x, Data y) {
-        if ((x.Minuta() >= y.Minuta()) && (x.Godzina() >= y.Godzina()) && (x.Dzien() >= y.Dzien()) && (x.Miesiac() >= y.Miesiac()) && (x.Rok() >= y.Rok())) return (true);
+        if ((x.Minuta() >= y.Minuta()) && (x.Godzina() >= y.Godzina()) && (x.Dzien >= y.Dzien) && (x.Miesiac >= y.Miesiac) && (x.Rok >= y.Rok)) return (true);
         else return (false);
 	}
 	public static bool operator==(Data x, Data y) {
-        if ((x.Minuta() == y.Minuta()) && (x.Godzina() == y.Godzina()) && (x.Dzien() == y.Dzien()) && (x.Miesiac() == y.Miesiac()) && (x.Rok() == y.Rok())) return (true);
+        if ((x.Minuta() == y.Minuta()) && (x.Godzina() == y.Godzina()) && (x.Dzien == y.Dzien) && (x.Miesiac == y.Miesiac) && (x.Rok == y.Rok)) return (true);
         else return (false);
 	}
 	public static bool operator!=(Data x, Data y) {
-        if ((x.Minuta() != y.Minuta()) && (x.Godzina() != y.Godzina()) && (x.Dzien() != y.Dzien()) && (x.Miesiac() != y.Miesiac()) && (x.Rok() != y.Rok())) return (true);
+        if ((x.Minuta() != y.Minuta()) && (x.Godzina() != y.Godzina()) && (x.Dzien != y.Dzien) && (x.Miesiac != y.Miesiac) && (x.Rok != y.Rok)) return (true);
         else return (false);
 	}
 	public override bool Equals(object obj) {
