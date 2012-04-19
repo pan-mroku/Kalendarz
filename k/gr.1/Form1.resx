@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="zapisz_button.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="wczytywanie_button.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="panel_grafika.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="panel_miesiac.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button_mieciac_tyl.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAA0CAMAAAD/uJueAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAcVQTFRFAAAADAwX
+        BQUKAQEDEBAfAQEBAwMHDQ0ZAgIFBwcOBQUJAAABCgoUAgIEBgYMAQECBAQJDg4bDAwYBQULAwMGAgID
+        CgoTDg4dBwcNBAQIDQ0aCgoVDw8eGBgwEhIkEBAgHh47FxctHBw3FBQoExMmHh46ExMnGho1FRUrICA8
+        Li5cJSVLKytVJCRGKSlSISFAKytUJiZMIyNHLS1aJydOKChRNTVqPj57NDRnOjpyMTFiPz9+MjJjPDx2
+        NjZqPj56MTFhOzt0NjZsUVGfR0eMTk6ZRUWHTEyTUFCbSkqRRESHS0uVVlaoXFy1VFSkWlqvWFiuU1Oj
+        XV23WVmvVVWlXl64YWG9YmK/YGC9ZGTHbW3ZaGjOaWnPamrRbW3WZmbHcXHfamrOa2vTbGzUa2vScXHe
+        ZWXHbm7WYmLAaGjPaWnSfn70dnbofHzzeHjrc3Pif3/1fHzyeHjqeXnvdXXkfHz0dHTienrvfn71fX30
+        dHTleXnud3fqe3v1gID/gYH/g4P/hYX/gYH+goL/hob/hob9hYX7goL5hIT/hob+hob8hIT6gYH3hYX8
+        g4P5hIT9goL9gID4goL4h4f/gID3hIT8hIT70qgCVQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAe5JREFU
+        SEvNluk/VFEYxw9jN0miGmKKIlvIkhRaB22Wso4hshWmKdKCOfd0jnGHTGH4e507+3Luvc9957z/fn7P
+        8nue5yC34YcME+5zheCY+EGBYYn8iTIQhLLl8ZWojj6Cyc5EW6ldijC6CGWrz0pNKZNgBBOPvSYVoTQH
+        EMEScz4vS0cIWYEIJbsjtRkcgCJY9n65nxkAgAhlrtc3skIEJDBM9qbas8MARIWyry9umqKErgol+9N1
+        OTGAngqW2TebNTeO0Fah7O+b+mBlYYFheefDA3MioBUY9+zb8gvJhGpgmBzMdOQJADUVbqi1noqLQkKs
+        Qolv9G6+GBCq8MquP7yUUFntiv1z9TdEDAVJH9PZR+K0VW2J/w/cUstCzfz48GNngXom4vTZ0VjjZXUl
+        0SBj6fj74O1CA0XmuxAT74atsshAKzlEiWeu64oBwyhClPmHmuKHS3ddcBf86K1KbqrmHuMreL77aqI7
+        dVYfZb6Fx9fAUxm4Ijyln+/uWYCDHDo8PCVn352Y8YTsZEpOFp8UKxs88CAI79Lx7lJz2N8wxM099Ot9
+        ddBDQITXQfb+flmmeAiMKB46dTwtQeg68CSFCu4fbrGYPwEPX7BLMtt81frZCKKMxenWtrGvAk9JjvmR
+        6N795M/XuUXOAIQdw7oaIAD1AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="button_miesiac_nap.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAA0CAMAAAD/uJueAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAATVQTFRFAAAACAgQ
+        DQ0ZCwsVCwsXBgYMAQECCQkTAwMHDg4bBwcOBQUKDAwZAwMFBwcPDg4cBAQIEhIjGBgvEBAgHh47FhYr
+        Gxs1FxctExMnGRkwHR07KipUICBAJiZMLi5cJSVJJiZLISFBLi5bKSlSIiJDNTVqPT16MTFiODhvPz9+
+        MTFjOjp0MzNkPDx3ODhwMzNmSEiPUFCeRUWITU2YRUWHSkqTRESHTk6cVFSlWlqwV1erXl65VlaqVlap
+        UVGgXFy2ZWXJbW3Zb2/cZmbJa2vUYWHAZ2fLbW3YZGTGcHDeamrSZmbKb2/dYmLBbm7bd3fsdHTnfn74
+        enrxc3Pkd3ftf3/8e3vyenrvd3frc3Pjenryf3/6fHz3gID/gYH/hYX/hIT/goL/iIj/hob/h4f/g4P/
+        gID8ZZeHfQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAXpJREFUSEvV1ddWwkAQBuAfESzYxd577x07ir0h
+        VjQ9+P6P4DlIzCbZeqfccr6zs7N/ZqAp/6AstH9BdEOXuRlxF/3+yDQlDEGs46qJB9sSIpJkY2jdtgyR
+        CZA4gL6s6KAIQfVy3uEeFCVA/4lb4iAaQWLy0WX3m0qAth12vxkEyakCqw0sArSvMPrNJsDAqUt7WB5B
+        zWqe0gYuAdI5JxI7AUHt9JMd6reIAB0ZMxg7MQEGg7GTIahbeyZiJ0WAoTP7N3aSBPUzL16/ZQnQuWv8
+        9FueIDl7Xg6DAkFsr3wfeZKaKygWNnzhVqIjeUrXvuV4uZEiDeuvxPcmQRrnL/13lLr+SE4xlt0HX+Gv
+        jF9Y08JbdGhwyeiV11hyEnJI+rBEnbRM0rxBGxWcwCQW36kDiU3Grh32mqEV1pPx00HZAFES3yyGx1DQ
+        hUnL0g13uYQDk8L4raG0K+96tz44q8grjyhM+ywyG8t4fU3nbUgfkaeIFn7l/z9LvgGHfsIKQ43AbgAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="ustawienia_roku_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_miesiaca_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="impurtuj_button.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_dnia_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_minuty_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_godziny_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_minuty_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_godziny_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_rok_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_miesiaca_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_dnia_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="wpis_tekst3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="wpis_tekst2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="wpis_tekst1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="czy_trwa_kilka_dni.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_tytul_wydarzenia.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_roku_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_miesiaca_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="impurtuj_button.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_dnia_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_minuty_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_godziny_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_minuty_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_godziny_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_rok_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_miesiaca_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_dnia_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="wpis_tekst3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="wpis_tekst2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="wpis_tekst1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="czy_trwa_kilka_dni.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_tytul_wydarzenia.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="panel_nagluwek_miesiac.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>
