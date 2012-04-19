@@ -6,6 +6,7 @@
 *.[Oo]bj
 *.user
 *.aps
+*.pidb
 *.pch
 *.vspscc
 *.vssscc
