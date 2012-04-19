@@ -20,7 +20,9 @@ public class Kalendarz
         if (File.Exists(plik))
         {
             FileStream fs = new FileStream(plik, FileMode.Create);
-            kalendarz = (Dictionary<Data_dzien, List<Wpis>>)bf.Deserialize(fs);
+            Kalendarz tmp = (Kalendarz)bf.Deserialize(fs);
+            kalendarz = tmp.kalendarz;
+            wyswietlajMiesiacSlownie = tmp.wyswietlajMiesiacSlownie;
         }
 
         /*StreamReader sr = new StreamReader(plik);
@@ -51,13 +53,13 @@ public class Kalendarz
 
             kalendarz.Add(tmp_dzien, tmp_list);
         }
-         * */
+         */
     }
     public void Zapisz(string plik)
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream fs = new FileStream(plik, FileMode.Create);
-        bf.Serialize(fs, kalendarz);
+        bf.Serialize(fs, this);
 
         /*
          StreamWriter sw = new StreamWriter(plik);
