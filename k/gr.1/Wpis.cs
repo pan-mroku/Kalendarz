@@ -110,10 +110,8 @@ public class Wpis
     {
         get
         {
-
             return poczatek;
         }
-
     }
     public Data Koniec
     {
