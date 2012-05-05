@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 public enum DniTygodnia { poniedziałek = 0, wtorek, środa, czwartek, piątek, sobota, niedziela };
 
-public class Data_dzien{
+public class Data_dzien:ICloneable
+{
     private int rok;
     private int miesiac;
     private int dzien;
@@ -71,23 +72,33 @@ public class Data_dzien{
 
     public static Data_dzien operator +(Data_dzien x, int n)
     {
+    	Data_dzien nowy=new Data_dzien(x.rok,x.miesiac,x.dzien);
         while (n > 0)
         {
-            x.DodajDzien();
+            nowy.DodajDzien();
             n -= 1;
         }
-        return x;
+        return nowy;
     }
     public static Data_dzien operator -(Data_dzien x, int n)
     {
+    	Data_dzien nowy=new Data_dzien(x.rok,x.miesiac,x.dzien);
         while (n > 0)
         {
-            x.OdejmijDzien();
+            nowy.OdejmijDzien();
             n -= 1;
         }
-        return x;
+        return nowy;
+    }
+    public static Data_dzien operator ++ (Data_dzien x)
+    {
+    	return x+1;
     }
 
+    public static Data_dzien operator -- (Data_dzien x)
+    {
+    	return x-1;
+    }
 
     private bool CzyPrzestepny(int _rok) //zwraca true jeśli podany rok jest przestępny, jeśli nie to zwraca false
     /*Rok jest przestępny jeżeli jest podzielny przez 4, ale nie jest podzielny przez 100 lub jest podzielny przez 400*/
@@ -290,6 +301,11 @@ public class Data_dzien{
     public override string ToString()
     {
         return rok + "-" + miesiac + "-" + dzien;
+    }
+    
+    public Object Clone()
+    {
+    	return new Data_dzien(rok,miesiac,dzien);
     }
 
 }

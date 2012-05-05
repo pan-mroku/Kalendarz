@@ -11,6 +11,8 @@ public class Kalendarz
 
     public Kalendarz()
     {
+		kalendarz=new Dictionary<Data_dzien, List<Wpis>>();
+		wyswietlajMiesiacSlownie=true;
         //Wczytaj("init.dat");
     }
 
