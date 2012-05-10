@@ -11,21 +11,17 @@ public class Kalendarz
 
     public Kalendarz()
     {
-		kalendarz=new Dictionary<Data_dzien, List<Wpis>>();
-		wyswietlajMiesiacSlownie=true;
-        //Wczytaj("init.dat");
+        kalendarz = new Dictionary<Data_dzien, List<Wpis>>();
+        wyswietlajMiesiacSlownie = true;
     }
 
-    public void Wczytaj(string plik)
+    public void Wczytaj(Stream plik)
     {
         BinaryFormatter bf = new BinaryFormatter();
-        if (File.Exists(plik))
-        {
-            FileStream fs = new FileStream(plik, FileMode.Create);
-            Kalendarz tmp = (Kalendarz)bf.Deserialize(fs);
-            kalendarz = tmp.kalendarz;
-            wyswietlajMiesiacSlownie = tmp.wyswietlajMiesiacSlownie;
-        }
+        Kalendarz tmp = (Kalendarz)bf.Deserialize(plik);
+        kalendarz = tmp.kalendarz;
+        wyswietlajMiesiacSlownie = tmp.wyswietlajMiesiacSlownie;
+
 
         /*StreamReader sr = new StreamReader(plik);
 
@@ -57,11 +53,10 @@ public class Kalendarz
         }
          */
     }
-    public void Zapisz(string plik)
+    public void Zapisz(Stream plik)
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream fs = new FileStream(plik, FileMode.Create);
-        bf.Serialize(fs, this);
+        bf.Serialize(plik, this);
 
         /*
          StreamWriter sw = new StreamWriter(plik);
@@ -118,7 +113,12 @@ public class Kalendarz
     }
     public List<Wpis> WpisyDnia(Data_dzien dzien)
     {
-        return kalendarz[dzien];
+        if (kalendarz.ContainsKey(dzien))
+        {
+            return kalendarz[dzien];
+        }
+
+        return null;
     }
     public Wpis SzukajWpis(string tytul)
     {

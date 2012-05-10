@@ -9,22 +9,42 @@ public class Aplikacja
     private Kalendarz kalendarz;
     private Data_dzien data;
 
+    private OpenFileDialog otwórz_plik;
+    private SaveFileDialog zapisz_plik;
+
     //konstruktor wczytujący kalendarz z pliku
     public Aplikacja()
     {
         kalendarz = new Kalendarz();
-        data=new Data_dzien(DateTime.Today.Year,DateTime.Today.Month,DateTime.Today.Day);
-        while(data.DzienTygodnia()!=DniTygodnia.poniedziałek)data--;
-        OpenFileDialog openFileDialog1 = new OpenFileDialog();
-        openFileDialog1.InitialDirectory = "c:\\";
-        openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-        openFileDialog1.FilterIndex = 2;
-        openFileDialog1.RestoreDirectory = true;
+        data = new Data_dzien(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
+        while (data.DzienTygodnia() != DniTygodnia.poniedziałek) { data--; }
+        
+        //inicjalizacja OpenFileDialog
+        otwórz_plik = new OpenFileDialog();
+        otwórz_plik.InitialDirectory = "c:\\";
+        otwórz_plik.FileName = "";
+        otwórz_plik.Filter = "pliki Kalendarza (*.kalen)|*.kalen|All files (*.*)|*.*";
+        otwórz_plik.FilterIndex = 2;
+        otwórz_plik.RestoreDirectory = true;
+        //**************KONIEC INICJALIZACJI OpenFileDialog**************
 
-        if (openFileDialog1.ShowDialog() == DialogResult.OK)
+
+        //inicjalizacja SaveFileDialog
+        SaveFileDialog zapisz_plik = new SaveFileDialog();
+        zapisz_plik.AddExtension = true;
+        zapisz_plik.FileName = "";
+        zapisz_plik.InitialDirectory = "c:\\";
+        zapisz_plik.Filter = "pliki Kalendarza (*.kalen)|*.kalen|All files (*.*)|*.*";
+        zapisz_plik.FilterIndex = 1;
+        zapisz_plik.RestoreDirectory = true;
+        //**************KONIEC INICJALIZACJI SaveFileDialog**************
+
+        if (otwórz_plik.ShowDialog() == DialogResult.OK)
         {
-            StreamReader sciezka = new StreamReader(openFileDialog1.FileName);
-            kalendarz.Wczytaj(Convert.ToString(sciezka));
+            Stream plik = otwórz_plik.OpenFile();
+            kalendarz.Wczytaj(plik);
+            plik.Flush();
+            plik.Close();
         }
     }
     public void Dodaj(Wpis nowy)
@@ -37,16 +57,12 @@ public class Aplikacja
         var pytanie = MessageBox.Show("Czy chcesz zapisać zmiany przed zamknięciem?", "Zapis zmian?", MessageBoxButtons.YesNo);
         if (pytanie == DialogResult.Yes)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.InitialDirectory = "c:\\";
-            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog1.FilterIndex = 2;
-            openFileDialog1.RestoreDirectory = true;
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (zapisz_plik.ShowDialog() == DialogResult.OK)
             {
-                StreamReader sciezka = new StreamReader(openFileDialog1.FileName);
-                kalendarz.Zapisz(Convert.ToString(sciezka));
+                Stream plik = zapisz_plik.OpenFile();
+                kalendarz.Zapisz(plik);
+                plik.Flush();
+                plik.Close();
             }
             MessageBox.Show("Zmiany zostały zapisane.", "Zapis zmian");
             Application.Exit();
@@ -58,19 +74,19 @@ public class Aplikacja
     }
     public Data_dzien Data()
     {
-    	return data;
+        return data;
     }
     public void Wstecz()
     {
-    	data-=7;
-       	while(data.Dzien!=1)data--;
-       	while(data.DzienTygodnia()!=DniTygodnia.poniedziałek)data--;
+        data -= 7;
+        while (data.Dzien != 1) data--;
+        while (data.DzienTygodnia() != DniTygodnia.poniedziałek) data--;
     }
     public void Naprzod()
     {
-    	data+=7;
-    	while(data.Dzien!=1)data++;
-    	while(data.DzienTygodnia()!=DniTygodnia.poniedziałek)data--;
+        data += 7;
+        while (data.Dzien != 1) data++;
+        while (data.DzienTygodnia() != DniTygodnia.poniedziałek) data--;
     }
 
 
@@ -118,8 +134,12 @@ public class Aplikacja
     //zapis okresu do pliku. Musi zapytać gdzie zapisać
     public void Eksport(Data_dzien poczatek, Data_dzien koniec)
     {
-        throw new System.Exception("Not implemented");
+        if (zapisz_plik.ShowDialog() == DialogResult.OK)
+        {
+            Stream plik = zapisz_plik.OpenFile();
+            kalendarz.Zapisz(plik);
+            plik.Flush();
+            plik.Close();
+        }
     }
-
-
 }
