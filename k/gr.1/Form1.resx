@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,52 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="strzałka_lewo" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEgAA
-        CxIB0t1+/AAABABJREFUeF7t3Dlv1FAUBeCMIhRNGhoKkFg6WhqE+AERSIiWpUVICP4JFS0NPVsFooCG
-        Bhqo+ANICAoQBRQRO2g4Z4gnY4893t5975o5SEdkmQye9+XYsYnvaDKZrA3hz2g02oPtPICcQS4hx5CN
-        wrZ/w/vPkBv8G6/t6xBeW24bCeI92GBiHEQuIPeQ98hvhN9NWf7g7c/IQ2QLGXt/XWXbNySM81jk28hb
-        5GcBg+9/QJ4j15HjbI9AArdtrhl1GO/w2PvIFeQksg9ZF0hAkJYYd/H4i8gRZHOoGNPjucfvoo4Yh/h1
-        Hl9Pm21yB7LKGO4asuoYrkCE8e/0w8UuSxi754LJQYSRPzFPCiKMxaskyUCEUX7JKgmIMKqvH0YHEcby
-        i7lRQYRRf2U9Gogw6jGinYcIoxlGFBBhNMcwBxFGOwxTEGG0xzADEUY3DBMQYXTHCA4ijH4YQUGE0R8j
-        GIgwwmAEARFGOIzeIMIIi9ELRBjhMTqDCMMGoxOIMOwwWoMIwxajFYgw7DEagwgjDkYjEGHEw6gFEUZc
-        jKUgwoiPUQkijDQYpSDCSIexACKMtBg5EGGkx5iBCMMHxhREGH4wMpDDQOGEhGU35fM+8OzW4//ibtc2
-        d8bGfCwbchXhuIqqCQnCCHj/fR0uQV4gnB1SNq5CGBExsl3Wd2CUDXL5iI8/QDh55yiyF+GUhLFiuga5
-        iTrZZJ1fWPTXyC3kMnIWOY2cUszXoBSEo44+Ia+Qp8gT5LESZQ1KQdgU7sa4O+MQsC9KtDWoBJkfDqa3
-        88PSLNdjKQh3XT92WsKmKPZrUAlSdhzhsUSxXYPpcaL4Yy8rWfWTFn/aUuzWYO0lFpjzCosnhmxI1bkI
-        z0cUmzVYu4bF5aUTnpXrbD3ymXnxUgoMpnMKOa/wTg0KP8+LkBzXOvhRenXXlFJ9niDzM3GFkrohOxe0
-        hJIYImvkbLSGmuLjP6pys06Ekh5lYfiMUNKilE4DEko6lMrxTEJJg7J0XpZQ4qPUDjATSlyUWhCdpzgE
-        EUo8lEYNmZ1F6jJLq/Xqcj2s9T+gY4ptW1qDaPflEEQodiidGqJjilMQNSU8TK+GqClOQdSUcDBBGqKm
-        OAVRU/rDBG2ImuIURE3pDmPSEDXFKYia0h7GtCFqilMQNaU5TJSGqClOQdSUepioDVFTnIKoKdUwSRqi
-        pjgFUVMWYZI2RE1xCqKm7MK4aIia4hRETcF4gC6/XWf9Nav8y3guQVa5KW5BOqBwiOc5ZD+ybt1iq+d3
-        DdIS5Q0gbiInkA2rBbN+XvcgBRROnOAYEA7tLA7M2cbHHiFbyNh64ayefxAgcygcA8KxtpykyilG84PE
-        OMuLo6M4qWjTasGsn/cvCMa9Flrt3cIAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="strzałka_prawo" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEgAA
-        CxIB0t1+/AAAA8NJREFUeF7t3btuE0EUBmBbURRBQ0NBAbjjCRCioYugoeXSIiQUWp6CN6BBogyXCoQQ
-        NFQ0UMEDICEoQBRQRCCuMv9v1pG1spO9zMzOOfNH+pPYG1ne8+14d73jk/F0Oh1Z+xqPxwfxnM8gN6qf
-        B2rr8BO33yB3kCfIR6znbxPrSRBrQWEJsIk8Qr4ifxFuWfP8IQJyH7mEHEXWLaynOYxqRG+gwCeRm8gL
-        5BPyq4bC2++RbeSiFRSrIGso8GHkNHINeYB88IBiEqQaJUThvmSCXEbueUAxCzLfH3DfgBzzgmIepBot
-        blBcgHhCcQPiBcUViAcUdyDWUVyCWEZxC2IVxTWIRRT3INZQigCxhFIMiBWUokAsoBQHkjtKkSA5oxQL
-        kitK0SA5ohQPkhuKQKpZN7lceRTIwjSoHFAEUpuXNjSKQJZMFBwSRSArZm4OhSKQPabSDoEikH3mNqdG
-        EUiDyeYpUQTSACTlyaNAGoKkQhFIC5AUKAJpCRIbRSAdQGKiCKQjSCwUgfQAiYEikJ4goVEEEgAkJIpA
-        AoGEQhFIQJAQKAIJDNIXRSARQDqisOPEcYFEAumAwjYgWwKJCNIShb1ZXiKzRi5KvBqw28Qh5ARyBXmI
-        fEaWNcz5QZCzSvQanEONzyNXkdvIW4TtohY7GM1/Hz3FAiV+DZ6hzs+R18iXJSNkF+QbFippavAdtebL
-        Evt5LRsds25yqxbo/mFqM6KakqYGbD1Y35nXN/wRX9uU+DVosv+YvWTxCECJW4MmR1jcr8wOe3mcrMSr
-        QZNzEPaHZN/IVzpTj3imjgI3bazGfpF86+S6QCKBVBhsT8s3De8iq5p08n4uZ9/IiUAigHTA2O0tLJDA
-        IH0wZm9G8psSpgZ9MQQScGMMgSGQQCChMAQSACQkhkB6goTGEEgPkBgYAukIEgtDIB1AYmIIpCVIbAyB
-        tABJgSGQhiCpMATSACQlhkD2AUmNIZA9QIbAEMgKkKEwBLIEZEgMgdRAhsYQyAJIDhgCqUBywRAIr2H/
-        n6rTZnZI1H92XPT19Nwwih4hOWIUC5IrRpEgOWMUB5I7RlEgFjCKAbGCUQSIJQz3INYwXINYxHALYhXD
-        JYhlDHcg1jFcgXjAcAPiBcMFiCcM8yDeMEyDAGMNOYJcQLaR/T4HHvVKH4sZIkEeJMQTafsYANhATiG3
-        kHcI21Msdtbh7fmH8k1gWB8h7BO5iTxGdmoYbOTCppJsV8EOCbxmvt4WfYi/tzxC2DCHXYzYWor9vhZH
-        B7vqsMPnFjKxgsEN4B+2Vb4WXpB7ngAAAABJRU5ErkJggg==
-</value>
-  </data>
+  <metadata name="zapisz_button.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="wczytywanie_button.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="panel_grafika.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="panel_miesiac.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_roku_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_miesiaca_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="impurtuj_button.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_dnia_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_minuty_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_godziny_koniec.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_minuty_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_godziny_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_rok_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_miesiaca_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienia_dnia_poczatek.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="wpis_tekst3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="wpis_tekst2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="wpis_tekst1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="czy_trwa_kilka_dni.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ustawienie_tytul_wydarzenia.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="panel_nagluwek_miesiac.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

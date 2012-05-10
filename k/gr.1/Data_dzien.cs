@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-
 public enum DniTygodnia { poniedziałek = 0, wtorek, środa, czwartek, piątek, sobota, niedziela };
 
-public class Data_dzien
+public class Data_dzien:ICloneable
 {
     private int rok;
     private int miesiac;
@@ -11,9 +10,9 @@ public class Data_dzien
 
     public Data_dzien(int _rok, int _miesiac, int _dzien)
     {
-        this.rok = _rok;
-        this.miesiac = _miesiac;
-        this.dzien = _dzien;
+        ZmienRok(_rok);
+        ZmienMiesiac(_miesiac);
+        ZmienDzien(_dzien);
     }
 
     public static bool operator >(Data_dzien x, Data_dzien y)
@@ -73,29 +72,32 @@ public class Data_dzien
 
     public static Data_dzien operator +(Data_dzien x, int n)
     {
-        if (n > 366)
+    	Data_dzien nowy=new Data_dzien(x.rok,x.miesiac,x.dzien);
+        while (n > 0)
         {
-            if (x.CzyPrzestepny(x.Rok) && x.CzyPrzestepny(x.Rok + 1))
-            {
-                
-            }
+            nowy.DodajDzien();
+            n -= 1;
         }
-        throw new System.Exception("Not implemented");
+        return nowy;
     }
-
     public static Data_dzien operator -(Data_dzien x, int n)
     {
-        throw new System.Exception("Not implemented");
+    	Data_dzien nowy=new Data_dzien(x.rok,x.miesiac,x.dzien);
+        while (n > 0)
+        {
+            nowy.OdejmijDzien();
+            n -= 1;
+        }
+        return nowy;
+    }
+    public static Data_dzien operator ++ (Data_dzien x)
+    {
+    	return x+1;
     }
 
-    public void ZmienRok(int _rok) //zmienia rok na podany 2011-9999
+    public static Data_dzien operator -- (Data_dzien x)
     {
-        if (_rok > 2011 && _rok < 9999)
-        {
-            this.rok = _rok;
-        }
-        else
-            this.rok = 0;
+    	return x-1;
     }
 
     private bool CzyPrzestepny(int _rok) //zwraca true jeśli podany rok jest przestępny, jeśli nie to zwraca false
@@ -127,10 +129,70 @@ public class Data_dzien
             return 365;
     }
 
-    public void ZmienMiesiac(int _miesac) //zmienia miesiąc na podany 1-12
+    public static int LiczbaDniWMiesiac(int _rok, int _miesiac)
     {
-        if (_miesac > 0 && _miesac < 13)
-            miesiac = _miesac;
+        try
+        {
+            return System.DateTime.DaysInMonth(_rok, _miesiac); //obsłużyć wyjątek gdy podano nieprawidłowy rok lub miesiąc
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            throw new Exception("Podano złe wartości roku i miesiąc. Zakres przekroczony.");
+        }
+    }
+
+    private void DodajDzien()
+    {
+        if (this.Dzien < LiczbaDniWMiesiac(this.Rok, this.Miesiac))
+        {
+            ZmienDzien(this.Dzien + 1);
+        }
+        else if (this.Miesiac < 12)
+        {
+            ZmienMiesiac(this.Miesiac + 1);
+            ZmienDzien(1);
+        }
+        else
+        {
+            ZmienRok(this.Rok + 1);
+            ZmienMiesiac(1);
+            ZmienDzien(1);
+        }
+    }
+
+    private void OdejmijDzien()
+    {
+        if (this.Dzien > 1)
+        {
+            ZmienDzien(this.Dzien - 1);
+        }
+        else if (this.Miesiac > 1)
+        {
+            ZmienMiesiac(this.Miesiac - 1);
+            ZmienDzien(LiczbaDniWMiesiac(this.Rok, this.Miesiac));
+        }
+        else
+        {
+            ZmienRok(this.Rok - 1);
+            ZmienMiesiac(12);
+            ZmienDzien(31);
+        }
+    }
+
+    public void ZmienRok(int _rok) //zmienia rok na podany 2012-9999
+    {
+        if (_rok > 2011 && _rok <= 9999)
+        {
+            this.rok = _rok;
+        }
+        else
+            this.rok = 0;
+    }
+
+    public void ZmienMiesiac(int _miesiac) //zmienia miesiąc na podany 1-12
+    {
+        if (_miesiac > 0 && _miesiac < 13)
+            miesiac = _miesiac;
         else
             throw new Exception("Zła liczba opisująca miesiąc. (miesiąc to liczba z przedziału 1-12)");
     }
@@ -240,10 +302,10 @@ public class Data_dzien
     {
         return rok + "-" + miesiac + "-" + dzien;
     }
-
-    public static int LiczbaDniWMiesiac(int _rok, int _miesiac)
+    
+    public Object Clone()
     {
-        return System.DateTime.DaysInMonth(_rok, _miesiac); //obsłużyć wyjątek gdy podano nieprawidłowy rok lub miesiąc
-        //throw new System.Exception("Not implemented");
+    	return new Data_dzien(rok,miesiac,dzien);
     }
+
 }

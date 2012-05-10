@@ -11,19 +11,17 @@ public class Kalendarz
 
     public Kalendarz()
     {
-        //Wczytaj("init.dat");
+        kalendarz = new Dictionary<Data_dzien, List<Wpis>>();
+        wyswietlajMiesiacSlownie = true;
     }
 
-    public void Wczytaj(string plik)
+    public void Wczytaj(Stream plik)
     {
         BinaryFormatter bf = new BinaryFormatter();
-        if (File.Exists(plik))
-        {
-            FileStream fs = new FileStream(plik, FileMode.Create);
-            Kalendarz tmp = (Kalendarz)bf.Deserialize(fs);
-            kalendarz = tmp.kalendarz;
-            wyswietlajMiesiacSlownie = tmp.wyswietlajMiesiacSlownie;
-        }
+        Kalendarz tmp = (Kalendarz)bf.Deserialize(plik);
+        kalendarz = tmp.kalendarz;
+        wyswietlajMiesiacSlownie = tmp.wyswietlajMiesiacSlownie;
+
 
         /*StreamReader sr = new StreamReader(plik);
 
@@ -55,11 +53,10 @@ public class Kalendarz
         }
          */
     }
-    public void Zapisz(string plik)
+    public void Zapisz(Stream plik)
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream fs = new FileStream(plik, FileMode.Create);
-        bf.Serialize(fs, this);
+        bf.Serialize(plik, this);
 
         /*
          StreamWriter sw = new StreamWriter(plik);
@@ -69,9 +66,9 @@ public class Kalendarz
         {
             Data_dzien tmp = nast.Current;
             //zapisywanie daty
-            sw.WriteLine(tmp.Rok());
-            sw.WriteLine(tmp.Miesiac());
-            sw.WriteLine(tmp.Dzien());
+            sw.WriteLine(tmp.Rok);
+            sw.WriteLine(tmp.Miesiac);
+            sw.WriteLine(tmp.Dzien);
             //----------------------------
 
             List<Wpis> tmp_list = kalendarz[nast.Current];

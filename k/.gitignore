@@ -1,2 +1,4 @@
 #Monodevelop
 *.userprefs
+*.user
+*.suo
