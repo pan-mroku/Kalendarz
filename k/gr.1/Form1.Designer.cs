@@ -210,12 +210,12 @@ namespace gr._1
         	// ustawienia_roku_koniec
         	// 
         	this.ustawienia_roku_koniec.FormattingEnabled = true;
-        	this.ustawienia_roku_koniec.Items.AddRange(new object[] {
+        	/*this.ustawienia_roku_koniec.Items.AddRange(new object[] {
         	        	        	"1900",
         	        	        	"1901",
         	        	        	"1902",
         	        	        	"1903",
-        	        	        	"1904"});
+        	        	        	"1904"});*/
         	this.ustawienia_roku_koniec.Location = new System.Drawing.Point(102, 129);
         	this.ustawienia_roku_koniec.Name = "ustawienia_roku_koniec";
         	this.ustawienia_roku_koniec.Size = new System.Drawing.Size(60, 21);
@@ -224,7 +224,7 @@ namespace gr._1
         	// ustawienia_miesiaca_koniec
         	// 
         	this.ustawienia_miesiaca_koniec.FormattingEnabled = true;
-        	this.ustawienia_miesiaca_koniec.Items.AddRange(new object[] {
+        	/*this.ustawienia_miesiaca_koniec.Items.AddRange(new object[] {
         	        	        	"1",
         	        	        	"2",
         	        	        	"3",
@@ -236,7 +236,7 @@ namespace gr._1
         	        	        	"9",
         	        	        	"10",
         	        	        	"11",
-        	        	        	"12"});
+        	        	        	"12"});*/
         	this.ustawienia_miesiaca_koniec.Location = new System.Drawing.Point(58, 129);
         	this.ustawienia_miesiaca_koniec.Name = "ustawienia_miesiaca_koniec";
         	this.ustawienia_miesiaca_koniec.Size = new System.Drawing.Size(38, 21);

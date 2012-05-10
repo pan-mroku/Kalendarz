@@ -72,12 +72,43 @@ public class Aplikacja
     	while(data.Dzien!=1)data++;
     	while(data.DzienTygodnia()!=DniTygodnia.poniedziałek)data--;
     }
-    
-    
+
+
     //metoda zwracająca miesiąc (tyle ile będzie przycisków w gui) bitmap, które potem będą skalowane na przyciskach. Niech nie-zajęte godziny nie zajmują zbyt dużo miejsca. Godziny zajęte powinny zajmować przestrzeń proporcjonalną do czasu ich trwania. Wystarczą same kolory, bez tytułów.
-    public List<Bitmap> Miesiac()
+    public List<Bitmap> Miesiac(Data_dzien pierwszy)
     {
-        throw new System.Exception("Not implemented");
+        List<Bitmap> lista_bitmap = new List<Bitmap> { };
+
+
+        for (int i = 0; i < 35; i++)
+        {
+            List<Wpis> lista_tmp = kalendarz.WpisyDnia(pierwszy + i);
+            if (lista_tmp != null)
+            {
+                Bitmap bitmapa = new Bitmap(1, 1440);
+                foreach (var wpis in lista_tmp)
+                {
+                    Data pocz = wpis.Poczatek;
+                    int pocz_w_minutach = pocz.Godzina() * 60 + pocz.Minuta();
+
+                    Data kon = wpis.Koniec;
+                    int kon_w_minutach = kon.Godzina() * 60 + kon.Minuta();
+
+                    int r = new Random().Next(0, 255);
+                    int g = new Random().Next(0, 255);
+                    int b = new Random().Next(0, 255);
+                    Color wypełnienie = Color.FromArgb(r, g, b);
+
+                    for (int y = pocz_w_minutach; y < kon_w_minutach + 1; y++)
+                    {
+                        bitmapa.SetPixel(0, y, wypełnienie);
+                    }
+                }
+
+                lista_bitmap.Add(bitmapa);
+            }
+        }
+        return lista_bitmap;
     }
     //metoda zwracająca bitmapę(być może w praniu zmienimy to na coś innego)  wybranego dnia. Podobnie jak powyżej, ale z napisanymi godzinami i tytułami wpisów
     public Bitmap Dzien(Data_dzien data)
