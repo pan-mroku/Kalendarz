@@ -116,7 +116,12 @@ public class Kalendarz
     }
     public List<Wpis> WpisyDnia(Data_dzien dzien)
     {
-        return kalendarz[dzien];
+        if (kalendarz.ContainsKey(dzien))
+        {
+            return kalendarz[dzien];
+        }
+
+        return null;
     }
     public Wpis SzukajWpis(string tytul)
     {
