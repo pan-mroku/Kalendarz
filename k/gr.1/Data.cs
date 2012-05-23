@@ -20,29 +20,188 @@ public class Data : Data_dzien  {
         return (minuta);
 	}
 	public static bool operator>(Data x, Data y) {
-        if ((x.Minuta() > y.Minuta()) && (x.Godzina() > y.Godzina()) && (x.Dzien > y.Dzien) && (x.Miesiac > y.Miesiac) && (x.Rok > y.Rok)) return (true);
-        else return (false);
+        if (x.Rok > y.Rok)
+        {
+            return (true);
+        }
+        else if (x.Rok == y.Rok)
+        {
+            if (x.Miesiac > y.Miesiac)
+            {
+                return (true);
+            }
+            else if (x.Miesiac == y.Miesiac)
+            {
+                if (x.Dzien > y.Dzien)
+                {
+                    return (true);
+                } else if (x.Dzien == y.Dzien) 
+                {
+                    if (x.Godzina() > y.Godzina())
+                    {
+                        return (true);
+                    }
+                    else if (x.Godzina() == y.Godzina())
+                    {
+                        if (x.Minuta() > y.Minuta())
+                        {
+                            return (true);
+                        }
+                    }
+                }
+            }
+
+        }
+        return (false);
 	}
 	public static bool operator<=(Data x, Data y) {
-        if ((x.Minuta() <= y.Minuta()) && (x.Godzina() <= y.Godzina()) && (x.Dzien <= y.Dzien) && (x.Miesiac <= y.Miesiac) && (x.Rok <= y.Rok)) return (true);
-        else return (false);
+        if (x.Rok <= y.Rok)
+        {
+            return (true);
+        }
+        else if (x.Rok == y.Rok)
+        {
+            if (x.Miesiac <= y.Miesiac)
+            {
+                return (true);
+            }
+            else if (x.Miesiac == y.Miesiac)
+            {
+                if (x.Dzien <= y.Dzien)
+                {
+                    return (true);
+                }
+                else if (x.Dzien == y.Dzien)
+                {
+                    if (x.Godzina() <= y.Godzina())
+                    {
+                        return (true);
+                    }
+                    else if (x.Godzina() == y.Godzina())
+                    {
+                        if (x.Minuta() <= y.Minuta())
+                        {
+                            return (true);
+                        }
+                    }
+                }
+            }
+
+        }
+        return (false);
 	}
 	public static bool operator<(Data x, Data y) {
-        if ((x.Minuta() < y.Minuta()) && (x.Godzina() < y.Godzina()) && (x.Dzien < y.Dzien) && (x.Miesiac < y.Miesiac) && (x.Rok < y.Rok)) return (true);
-        else return (false);
-	}
+        if (x.Rok < y.Rok)
+        {
+            return (true);
+        }
+        else if (x.Rok == y.Rok)
+        {
+            if (x.Miesiac < y.Miesiac)
+            {
+                return (true);
+            }
+            else if (x.Miesiac == y.Miesiac)
+            {
+                if (x.Dzien < y.Dzien)
+                {
+                    return (true);
+                }
+                else if (x.Dzien == y.Dzien)
+                {
+                    if (x.Godzina() < y.Godzina())
+                    {
+                        return (true);
+                    }
+                    else if (x.Godzina() == y.Godzina())
+                    {
+                        if (x.Minuta() < y.Minuta())
+                        {
+                            return (true);
+                        }
+                    }
+                }
+            }
+
+        }
+        return (false);
+    }
 	public static bool operator>=(Data x, Data y) {
-        if ((x.Minuta() >= y.Minuta()) && (x.Godzina() >= y.Godzina()) && (x.Dzien >= y.Dzien) && (x.Miesiac >= y.Miesiac) && (x.Rok >= y.Rok)) return (true);
-        else return (false);
-	}
+        if (x.Rok >= y.Rok)
+        {
+            return (true);
+        }
+        else if (x.Rok == y.Rok)
+        {
+            if (x.Miesiac >= y.Miesiac)
+            {
+                return (true);
+            }
+            else if (x.Miesiac == y.Miesiac)
+            {
+                if (x.Dzien >= y.Dzien)
+                {
+                    return (true);
+                }
+                else if (x.Dzien == y.Dzien)
+                {
+                    if (x.Godzina() >= y.Godzina())
+                    {
+                        return (true);
+                    }
+                    else if (x.Godzina() == y.Godzina())
+                    {
+                        if (x.Minuta() >= y.Minuta())
+                        {
+                            return (true);
+                        }
+                    }
+                }
+            }
+
+        }
+        return (false);
+    }
 	public static bool operator==(Data x, Data y) {
         if ((x.Minuta() == y.Minuta()) && (x.Godzina() == y.Godzina()) && (x.Dzien == y.Dzien) && (x.Miesiac == y.Miesiac) && (x.Rok == y.Rok)) return (true);
         else return (false);
 	}
 	public static bool operator!=(Data x, Data y) {
-        if ((x.Minuta() != y.Minuta()) && (x.Godzina() != y.Godzina()) && (x.Dzien != y.Dzien) && (x.Miesiac != y.Miesiac) && (x.Rok != y.Rok)) return (true);
-        else return (false);
-	}
+        if (x.Rok != y.Rok)
+        {
+            return (true);
+        }
+        else if (x.Rok == y.Rok)
+        {
+            if (x.Miesiac != y.Miesiac)
+            {
+                return (true);
+            }
+            else if (x.Miesiac == y.Miesiac)
+            {
+                if (x.Dzien != y.Dzien)
+                {
+                    return (true);
+                }
+                else if (x.Dzien == y.Dzien)
+                {
+                    if (x.Godzina() != y.Godzina())
+                    {
+                        return (true);
+                    }
+                    else if (x.Godzina() == y.Godzina())
+                    {
+                        if (x.Minuta() != y.Minuta())
+                        {
+                            return (true);
+                        }
+                    }
+                }
+            }
+
+        }
+        return (false);
+    }
 	public override bool Equals(object obj) {
         if ((obj is Data) && (this == (Data)obj)) return (true);
         else return (false);
