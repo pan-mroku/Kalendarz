@@ -2,17 +2,24 @@ using System;
 using System.Collections.Generic;
 public enum DniTygodnia { poniedziałek = 0, wtorek, środa, czwartek, piątek, sobota, niedziela };
 
-public class Data_dzien:ICloneable
+public class Data_dzien
 {
-    private int rok;
-    private int miesiac;
-    private int dzien;
+    protected int rok;
+    protected int miesiac;
+    protected int dzien;
 
+    public Data_dzien()
+    {
+    	Rok(DateTime.Today.Year);
+    	Miesiac(DateTime.Today.Month);
+    	Dzien(DateTime.Today.Day);
+    }
+    
     public Data_dzien(int _rok, int _miesiac, int _dzien)
     {
-        ZmienRok(_rok);
-        ZmienMiesiac(_miesiac);
-        ZmienDzien(_dzien);
+        Rok(_rok);
+        Miesiac(_miesiac);
+        Dzien(_dzien);
     }
 
     public static bool operator >(Data_dzien x, Data_dzien y)
@@ -137,67 +144,73 @@ public class Data_dzien:ICloneable
         }
         catch (ArgumentOutOfRangeException)
         {
-            throw new Exception("Podano złe wartości roku i miesiąc. Zakres przekroczony.");
+            throw new Exception("Podano złe wartości roku i miesiąc. Zakres przekroczony."+_rok+" "+_miesiac);
         }
     }
 
+    public int LiczbaDniWMiesiac()
+    {
+    	return LiczbaDniWMiesiac(rok,miesiac);
+    }
+    
     private void DodajDzien()
     {
-        if (this.Dzien < LiczbaDniWMiesiac(this.Rok, this.Miesiac))
+        if (dzien < LiczbaDniWMiesiac(rok,miesiac))
         {
-            ZmienDzien(this.Dzien + 1);
+            Dzien(dzien + 1);
         }
-        else if (this.Miesiac < 12)
+        else if (miesiac < 12)
         {
-            ZmienMiesiac(this.Miesiac + 1);
-            ZmienDzien(1);
+            Miesiac(miesiac + 1);
+            Dzien(1);
         }
         else
         {
-            ZmienRok(this.Rok + 1);
-            ZmienMiesiac(1);
-            ZmienDzien(1);
+            Rok(rok + 1);
+            Miesiac(1);
+            Dzien(1);
         }
     }
 
     private void OdejmijDzien()
     {
-        if (this.Dzien > 1)
+        if (dzien > 1)
         {
-            ZmienDzien(this.Dzien - 1);
+            Dzien(dzien - 1);
         }
-        else if (this.Miesiac > 1)
+        else if (miesiac > 1)
         {
-            ZmienMiesiac(this.Miesiac - 1);
-            ZmienDzien(LiczbaDniWMiesiac(this.Rok, this.Miesiac));
+            Miesiac(miesiac - 1);
+            Dzien(LiczbaDniWMiesiac(rok, miesiac));
         }
         else
         {
-            ZmienRok(this.Rok - 1);
-            ZmienMiesiac(12);
-            ZmienDzien(31);
+            Rok(rok - 1);
+            Miesiac(12);
+            Dzien(31);
         }
     }
 
-    public void ZmienRok(int _rok) //zmienia rok na podany 2012-9999
+    public void Rok(int _rok) //zmienia rok na podany 2012-9999 @Ale tak właściwie, to po co?
     {
-        if (_rok > 2011 && _rok <= 9999)
+        /*if (_rok > 2011 && _rok <= 9999)
         {
             this.rok = _rok;
         }
         else
-            this.rok = 0;
+            this.rok = 0;*/
+        this.rok=_rok;
     }
 
-    public void ZmienMiesiac(int _miesiac) //zmienia miesiąc na podany 1-12
+    public void Miesiac(int _miesiac) //zmienia miesiąc na podany 1-12
     {
         if (_miesiac > 0 && _miesiac < 13)
             miesiac = _miesiac;
         else
-            throw new Exception("Zła liczba opisująca miesiąc. (miesiąc to liczba z przedziału 1-12)");
+            throw new Exception("Zła liczba opisująca miesiąc. (miesiąc to liczba z przedziału 1-12)"+_miesiac);
     }
 
-    public void ZmienDzien(int _dzien) //zmienia dzień na podany 1-31
+    public void Dzien(int _dzien) //zmienia dzień na podany 1-31
     /*Styczeń - 31, Luty - 28/29, Marzec - 31, Kwiecień - 30, Maj - 31, Czerwiec - 30, Lipiec - 31, Sierpień - 31,
      *Wrzesień - 30, Październik - 31, Listopad - 30, Grudzień - 31*/
     {
@@ -211,14 +224,14 @@ public class Data_dzien:ICloneable
                 if (_dzien < 31)
                     dzien = _dzien;
                 else
-                    throw new Exception("Podany numer dnia jest zbyt wysoki, ten miesiąc ma tylko 30 dni.");
+                    dzien=30;
             }
             else if (m31.Contains(miesiac))
             {
                 if (_dzien < 32)
                     dzien = _dzien;
                 else
-                    throw new Exception("Podany numer dnia jest zbyt wysoki, ten miesiąc ma tylko 31 dni.");
+                    dzien=31;
             }
             else if (miesiac == 2)
             {
@@ -229,7 +242,7 @@ public class Data_dzien:ICloneable
                         dzien = _dzien;
                     }
                     else
-                        throw new Exception("Luty w tym w podanym roku może mieć tylko 29 dni.");
+                        dzien=29;
                 }
                 else //Jeśli rok jest nie przestępny to luty może mieć 28 dni
                 {
@@ -238,7 +251,7 @@ public class Data_dzien:ICloneable
                         dzien = _dzien;
                     }
                     else
-                        throw new Exception("Luty w tym w podanym roku może mieć tylko 28 dni.");
+                        dzien=28;
                 }
             }
             else
@@ -248,19 +261,19 @@ public class Data_dzien:ICloneable
         }
     }
 
-    public int Rok
+    public int Rok()
     {
-        get { return rok; }
+        return rok;
     }
 
-    public int Miesiac
+    public int Miesiac()
     {
-        get { return miesiac; }
+        return miesiac;
     }
 
-    public int Dzien
+    public int Dzien()
     {
-        get { return dzien; }
+       return dzien;
     }
 
     public DniTygodnia DzienTygodnia()
@@ -302,10 +315,4 @@ public class Data_dzien:ICloneable
     {
         return rok + "-" + miesiac + "-" + dzien;
     }
-    
-    public Object Clone()
-    {
-    	return new Data_dzien(rok,miesiac,dzien);
-    }
-
 }

@@ -16,7 +16,7 @@ public class Aplikacja
     public Aplikacja()
     {
         kalendarz = new Kalendarz();
-        data = new Data_dzien(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
+        data = new Data_dzien();
         while (data.DzienTygodnia() != DniTygodnia.poniedziałek) { data--; }
         
         //inicjalizacja OpenFileDialog
@@ -30,7 +30,7 @@ public class Aplikacja
 
 
         //inicjalizacja SaveFileDialog
-        SaveFileDialog zapisz_plik = new SaveFileDialog();
+        zapisz_plik = new SaveFileDialog();
         zapisz_plik.AddExtension = true;
         zapisz_plik.FileName = "";
         zapisz_plik.InitialDirectory = "c:\\";
@@ -79,13 +79,13 @@ public class Aplikacja
     public void Wstecz()
     {
         data -= 7;
-        while (data.Dzien != 1) data--;
+        while (data.Dzien() != 1) data--;
         while (data.DzienTygodnia() != DniTygodnia.poniedziałek) data--;
     }
     public void Naprzod()
     {
         data += 7;
-        while (data.Dzien != 1) data++;
+        while (data.Dzien() != 1) data++;
         while (data.DzienTygodnia() != DniTygodnia.poniedziałek) data--;
     }
 
@@ -104,10 +104,10 @@ public class Aplikacja
                 Bitmap bitmapa = new Bitmap(1, 1440);
                 foreach (var wpis in lista_tmp)
                 {
-                    Data pocz = wpis.Poczatek;
+                	Data pocz = wpis.Poczatek();
                     int pocz_w_minutach = pocz.Godzina() * 60 + pocz.Minuta();
 
-                    Data kon = wpis.Koniec;
+                    Data kon = wpis.Koniec();
                     int kon_w_minutach = kon.Godzina() * 60 + kon.Minuta();
 
                     int r = new Random().Next(0, 255);
@@ -145,7 +145,7 @@ public class Aplikacja
                 int B = new Random().Next(1, 255);
                 Color kolorDnia = Color.FromArgb(R, G, B);
 
-                string napis = tytul + "/n" + wpis.Poczatek() + "-" + wpis.Koniec();
+                string napis = wpis.Tytul() + "/n" + wpis.Poczatek() + "-" + wpis.Koniec();
                 Bitmap Tekst = new Bitmap(10,koniec-poczatek);
                 Graphics grafikaTekst = Graphics.FromImage(Tekst);
                 grafikaTekst.DrawString(napis, new Font("Arial", 10), Brushes.Black, new Point(0, 0));

@@ -89,16 +89,16 @@ public class Kalendarz
     }
     public Data_dzien Dodaj(Wpis wpis)
     {
-        Data_dzien poczatek = (Data_dzien)wpis.Poczatek;
+    	Data_dzien poczatek = (Data_dzien)wpis.Poczatek();
         if (kalendarz.ContainsKey(poczatek)) //jeżeli wpis danego dnia już istnieje
         {
             List<Wpis> wpisy_dnia = kalendarz[poczatek];
 
             foreach (var tmp_wpis in wpisy_dnia) //sprawdź czy taki wpis już istnieje
             {
-                if (tmp_wpis.Poczatek == wpis.Poczatek && tmp_wpis.Koniec == wpis.Koniec) //jeżeli istnieje to
+            	if (tmp_wpis.Poczatek() == wpis.Poczatek() && tmp_wpis.Koniec() == wpis.Koniec()) //jeżeli istnieje to
                 {
-                    tmp_wpis.SetTytul(wpis.Tytul); //zmień nazwę
+                    tmp_wpis.Tytul(wpis.Tytul()); //zmień nazwę
                     return poczatek;
                 }
             }
@@ -126,7 +126,7 @@ public class Kalendarz
         {
             foreach (var wpis in listy)
             {
-                if (wpis.Tytul == tytul)
+                if (wpis.Tytul() == tytul)
                 {
                     return wpis;
                 }

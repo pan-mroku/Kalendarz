@@ -53,43 +53,28 @@ public class Wpis
     {
         return 0;
     }
-    public void SetPoczatek(Data _poczatek)
+    public void Poczatek(Data _poczatek)
     {
-        this.poczatek = _poczatek;
+        poczatek = _poczatek;
     }
-    public void SetKoniec(Data _koniec)
+    public void Koniec(Data _koniec)
     {
-        this.koniec = _koniec;
+        koniec = _koniec;
     }
-    public void SetTytul(string _tytul)
+    public void Tytul(string _tytul)
     {
-        this.tytul = _tytul;
+        tytul = _tytul;
     }
-    public Data Poczatek
+    public Data Poczatek()
     {
-        get
-        {
-
             return poczatek;
-        }
-
     }
-    public Data Koniec
+    public Data Koniec()
     {
-        get
-        {
             return koniec;
-        }
-
     }
-    public string Tytul
+    public string Tytul()
     {
-        get
-        {
-            return this.tytul;
-        }
+            return tytul;
     }
-
-
-
 }
