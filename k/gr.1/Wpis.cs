@@ -13,69 +13,28 @@ public class Wpis
     }
     public static bool operator >(Wpis x, Wpis y)
     {
-        if (x.poczatek > y.poczatek)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (x.poczatek > y.poczatek);
     }
     public static bool operator <=(Wpis x, Wpis y)
     {
-        if (x.poczatek <= y.poczatek)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (x.poczatek <= y.poczatek) ;
     }
     public static bool operator <(Wpis x, Wpis y)
     {
-        if (x.poczatek < y.poczatek)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return(x.poczatek < y.poczatek) ;
     }
     public static bool operator >=(Wpis x, Wpis y)
     {
-        if (x.poczatek >= y.poczatek)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (x.poczatek >= y.poczatek) ;
     }
     public static bool operator ==(Wpis x, Wpis y)
     {
-        if (x.poczatek == y.poczatek)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (x.poczatek == y.poczatek) ;
     }
     public static bool operator !=(Wpis x, Wpis y)
     {
-        if (x.poczatek != y.poczatek)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (x.poczatek != y.poczatek);
+       
     }
     public override bool Equals(object obj)
     {
@@ -110,8 +69,10 @@ public class Wpis
     {
         get
         {
+
             return poczatek;
         }
+
     }
     public Data Koniec
     {
