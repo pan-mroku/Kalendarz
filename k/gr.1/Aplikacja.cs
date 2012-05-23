@@ -126,10 +126,50 @@ public class Aplikacja
         }
         return lista_bitmap;
     }
-    //metoda zwracająca bitmapę(być może w praniu zmienimy to na coś innego)  wybranego dnia. Podobnie jak powyżej, ale z napisanymi godzinami i tytułami wpisów
+    //metoda zwracająca bitmapę(być może w praniu zmienimy to na coś innego) wybranego dnia. Podobnie jak powyżej, ale z napisanymi godzinami i tytułami wpisów
     public Bitmap Dzien(Data_dzien data)
     {
-        throw new System.Exception("Not implemented");
+        List<Wpis> listaWpisw = kalendarz.WpisyDnia(data);
+        Bitmap dzien=new Bitmap(10,1440);
+            for (int i = 0; i < listaWpisw.Count; i++)
+            {
+                Wpis wpis = listaWpisw[i];
+                Data dat_pocz=wpis.Poczatek();
+                int poczatek=dat_pocz.Godzina()*60+dat_pocz.Minuta();
+                Data dat_kon=wpis.Koniec();
+                int koniec=dat_kon.Godzina()*60+dat_kon.Minuta();
+                string tytul = wpis.Tytul();
+            
+                int R = new Random().Next(1, 255);
+                int G = new Random().Next(1, 255);
+                int B = new Random().Next(1, 255);
+                Color kolorDnia = Color.FromArgb(R, G, B);
+
+                string napis = tytul + "/n" + wpis.Poczatek() + "-" + wpis.Koniec();
+                Bitmap Tekst = new Bitmap(10,koniec-poczatek);
+                Graphics grafikaTekst = Graphics.FromImage(Tekst);
+                grafikaTekst.DrawString(napis, new Font("Arial", 10), Brushes.Black, new Point(0, 0));
+                Tekst = new Bitmap(10, koniec - poczatek, grafikaTekst);
+
+                for (int j = 0; j < Tekst.Height; j++)
+                {
+                    for (int k = 0; k < Tekst.Width; k++)
+                    {
+                        if (Tekst.GetPixel(k, j) != Color.Black)
+                        {
+                            Tekst.SetPixel(k, j, kolorDnia);
+                        }
+                        for (int l = poczatek; l < koniec; l++)
+                        {
+                            for (int m = 0; m < 10; m++)
+                            {
+                                dzien.SetPixel(m, l, Tekst.GetPixel(k, j));
+                            }
+                        }
+                    }
+                }
+            }
+            return dzien;
     }
     //zapis okresu do pliku. Musi zapytać gdzie zapisać
     public void Eksport(Data_dzien poczatek, Data_dzien koniec)
