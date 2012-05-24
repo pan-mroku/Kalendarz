@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 public enum DniTygodnia { poniedziałek = 0, wtorek, środa, czwartek, piątek, sobota, niedziela };
 
+[Serializable]
 public class Data_dzien
 {
     protected int rok;
