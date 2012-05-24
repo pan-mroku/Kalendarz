@@ -103,7 +103,17 @@ public class Kalendarz
                 }
             }
 
-            wpisy_dnia.Add(wpis); //jeżeli takiego wpisu jeszcze nie ma to do aktualnej listy @TODO:A jakieś sortowanie może?            
+
+            //***********SORTOWANIE WPISÓW***********
+            Wpis tmp_wpis2 = wpisy_dnia[0];
+            int i = 0;
+            while(wpis > tmp_wpis2)
+            {
+                i++;
+            }
+
+            kalendarz[poczatek].Insert(i, wpis);
+            //***********KONIEC SORTOWANIA***********                           
         }
         else
         {
