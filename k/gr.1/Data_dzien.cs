@@ -15,6 +15,13 @@ public class Data_dzien
     	Miesiac(DateTime.Today.Month);
     	Dzien(DateTime.Today.Day);
     }
+
+    public Data_dzien(Data_dzien kopia)
+    {
+        rok = kopia.rok;
+        miesiac = kopia.miesiac;
+        dzien = kopia.dzien;
+    }
     
     public Data_dzien(int _rok, int _miesiac, int _dzien)
     {

@@ -10,6 +10,12 @@ public class Data : Data_dzien  {
 		godzina=7;
 		minuta=0;
 	}
+
+    public Data(Data kopia):base(kopia.rok,kopia.miesiac,kopia.dzien)
+    {
+        godzina = kopia.godzina;
+        minuta = kopia.minuta;
+    }
 	
 	public Data(int _rok, int _miesiac, int _dzien, int _godzina, int _minuta):base(_rok,_miesiac,_dzien) {
 		godzina = _godzina;
