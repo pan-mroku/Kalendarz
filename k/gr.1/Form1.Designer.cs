@@ -614,30 +614,40 @@ namespace gr._1
 		
 		void Ustaw_wpisClick(object sender, EventArgs e)
 		{
-			//@FIX:Tu chyba coś nie tak
-			if((Data_dzien)poczatek+1<=(Data_dzien)koniec)
-			{
-				Data i=poczatek;
-				Data j=poczatek+1;
-				while(j<koniec)
-				{
-					Wpis nowy=new Wpis(i,j,ustawienie_tytul_wydarzenia.Text);
-					aplikacja.Dodaj(nowy);
-					i++; j++;
-				}
-				aplikacja.Dodaj(new Wpis(i,koniec,ustawienie_tytul_wydarzenia.Text));
-			} 
-			else
-			{
-			
-				aplikacja.Dodaj(new Wpis(poczatek,koniec,ustawienie_tytul_wydarzenia.Text));
-			}
-			poczatek=new Data();
-			koniec=new Data();
-			OdswierzDni();
-			OdswierzPoczatek();
-			OdswierzKoniec();
-			Odswierz();
+            //@FIX:Tu chyba coś nie tak
+            Data_dzien poczatek_dzien = (Data_dzien)poczatek;
+            Data_dzien koniec_dzien = (Data_dzien)koniec;
+
+            if (poczatek_dzien + 1 <= koniec_dzien)
+            {
+                Data i = new Data(poczatek);
+                Data j = new Data(poczatek);
+                j.Godzina(23);
+                j.Minuta(59);
+                aplikacja.Dodaj(new Wpis(i, j, ustawienie_tytul_wydarzenia.Text));
+                j++;
+                i++;
+                i.Godzina(0);
+                i.Minuta(0);
+                while (j < koniec)
+                {
+                    Wpis nowy = new Wpis(i, j, ustawienie_tytul_wydarzenia.Text);
+                    aplikacja.Dodaj(nowy);
+                    i++; j++;
+                }
+                aplikacja.Dodaj(new Wpis(i, koniec, ustawienie_tytul_wydarzenia.Text));
+            }
+            else
+            {
+
+                aplikacja.Dodaj(new Wpis(poczatek, koniec, ustawienie_tytul_wydarzenia.Text));
+            }
+            poczatek = new Data();
+            koniec = new Data();
+            OdswierzDni();
+            OdswierzPoczatek();
+            OdswierzKoniec();
+            Odswierz();
 		}
 		
 		void Form1FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
