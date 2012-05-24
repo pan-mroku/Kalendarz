@@ -135,8 +135,40 @@ public class Data : Data_dzien  {
 		return (false);
 	}
 	public static bool operator>=(Data x, Data y) {
-		return x<y;
+		return !(x<y);
 	}
+	
+	public static Data operator +(Data x, int n)
+    {
+    	Data_dzien nowy=new Data_dzien(x.rok,x.miesiac,x.dzien);
+        while (n > 0)
+        {
+            nowy++;
+            n -= 1;
+        }
+        return new Data(nowy.Rok(), nowy.Miesiac(), nowy.Dzien(), x.godzina, x.minuta);
+    }
+    public static Data operator -(Data x, int n)
+    {
+    	Data_dzien nowy=new Data_dzien(x.rok,x.miesiac,x.dzien);
+        while (n > 0)
+        {
+            nowy--;
+            n -= 1;
+        }
+        return new Data(nowy.Rok(), nowy.Miesiac(), nowy.Dzien(), x.godzina, x.minuta);
+    }
+    public static Data operator ++ (Data x)
+    {
+    	return x+1;
+    }
+
+    public static Data operator -- (Data x)
+    {
+    	return x-1;
+    }
+
+	
 	public static bool operator==(Data x, Data y) {
 		if ((x.Minuta() == y.Minuta()) && (x.Godzina() == y.Godzina()) && (x.Dzien() == y.Dzien()) && (x.Miesiac() == y.Miesiac()) && (x.Rok() == y.Rok())) return (true);
 		else return (false);

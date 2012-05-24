@@ -103,7 +103,7 @@ public class Kalendarz
                 }
             }
 
-            wpisy_dnia.Add(wpis); //jeżeli takiego wpisu jeszcze nie ma to do aktualnej listy            
+            wpisy_dnia.Add(wpis); //jeżeli takiego wpisu jeszcze nie ma to do aktualnej listy @TODO:A jakieś sortowanie może?            
         }
         else
         {

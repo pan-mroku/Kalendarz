@@ -153,7 +153,7 @@ public class Data_dzien
     	return LiczbaDniWMiesiac(rok,miesiac);
     }
     
-    private void DodajDzien()
+    protected void DodajDzien()
     {
         if (dzien < LiczbaDniWMiesiac(rok,miesiac))
         {
@@ -172,7 +172,7 @@ public class Data_dzien
         }
     }
 
-    private void OdejmijDzien()
+    protected void OdejmijDzien()
     {
         if (dzien > 1)
         {

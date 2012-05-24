@@ -30,6 +30,7 @@ namespace gr._1
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.panel_menu = new System.Windows.Forms.Panel();
 			this.zapisz_button = new System.Windows.Forms.Button();
 			this.wczytywanie_button = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@ namespace gr._1
 			this.button_mieciac_tyl = new System.Windows.Forms.Button();
 			this.button_miesiac_nap = new System.Windows.Forms.Button();
 			this.wpisy_panel = new System.Windows.Forms.Panel();
+			this.ustaw_wpis = new System.Windows.Forms.Button();
 			this.ustawienia_dnia_poczatek = new System.Windows.Forms.ComboBox();
 			this.ustawienie_miesiaca_poczatek = new System.Windows.Forms.ComboBox();
 			this.ustawienia_rok_poczatek = new System.Windows.Forms.ComboBox();
@@ -54,12 +56,12 @@ namespace gr._1
 			this.wpis_tekst3 = new System.Windows.Forms.Label();
 			this.wpis_tekst2 = new System.Windows.Forms.Label();
 			this.wpis_tekst1 = new System.Windows.Forms.Label();
-			this.czy_trwa_kilka_dni = new System.Windows.Forms.CheckBox();
 			this.ustawienie_tytul_wydarzenia = new System.Windows.Forms.TextBox();
-			this.zatwierdz_ustaw = new System.Windows.Forms.Button();
+			this.usun_wpis = new System.Windows.Forms.Button();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.panel_nagluwek_miesiac = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.panel_menu.SuspendLayout();
 			this.panel_grafika.SuspendLayout();
 			this.panel_miesiac.SuspendLayout();
@@ -196,6 +198,7 @@ namespace gr._1
 			this.wpisy_panel.AutoScrollMargin = new System.Drawing.Size(3, 3);
 			this.wpisy_panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.wpisy_panel.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+			this.wpisy_panel.Controls.Add(this.ustaw_wpis);
 			this.wpisy_panel.Controls.Add(this.ustawienia_dnia_poczatek);
 			this.wpisy_panel.Controls.Add(this.ustawienie_miesiaca_poczatek);
 			this.wpisy_panel.Controls.Add(this.ustawienia_rok_poczatek);
@@ -204,14 +207,13 @@ namespace gr._1
 			this.wpisy_panel.Controls.Add(this.ustawienia_dnia_koniec);
 			this.wpisy_panel.Controls.Add(this.ustawienia_miesiaca_koniec);
 			this.wpisy_panel.Controls.Add(this.ustawienia_roku_koniec);
-			this.wpisy_panel.Controls.Add(this.ustawienie_godziny_koniec);			
+			this.wpisy_panel.Controls.Add(this.ustawienie_godziny_koniec);
 			this.wpisy_panel.Controls.Add(this.ustawienie_minuty_koniec);
 			this.wpisy_panel.Controls.Add(this.wpis_tekst3);
 			this.wpisy_panel.Controls.Add(this.wpis_tekst2);
 			this.wpisy_panel.Controls.Add(this.wpis_tekst1);
-			this.wpisy_panel.Controls.Add(this.czy_trwa_kilka_dni);
 			this.wpisy_panel.Controls.Add(this.ustawienie_tytul_wydarzenia);
-			this.wpisy_panel.Controls.Add(this.zatwierdz_ustaw);
+			this.wpisy_panel.Controls.Add(this.usun_wpis);
 			this.wpisy_panel.Dock = System.Windows.Forms.DockStyle.Top;
 			this.wpisy_panel.Location = new System.Drawing.Point(0, 0);
 			this.wpisy_panel.Margin = new System.Windows.Forms.Padding(4);
@@ -219,104 +221,18 @@ namespace gr._1
 			this.wpisy_panel.Size = new System.Drawing.Size(360, 249);
 			this.wpisy_panel.TabIndex = 3;
 			// 
-			// ustawienia_roku_koniec
+			// ustaw_wpis
 			// 
-			this.ustawienia_roku_koniec.FormattingEnabled = true;
-			this.ustawienia_roku_koniec.Location = new System.Drawing.Point(136, 159);
-			this.ustawienia_roku_koniec.Margin = new System.Windows.Forms.Padding(4);
-			this.ustawienia_roku_koniec.Name = "ustawienia_roku_koniec";
-			this.ustawienia_roku_koniec.Size = new System.Drawing.Size(79, 24);
-			this.ustawienia_roku_koniec.TabIndex = 20;
-			this.ustawienia_roku_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_roku_koniecSelectedIndexChanged);
-			this.ustawienia_roku_koniec.Leave += new System.EventHandler(this.Ustawienia_roku_koniecSelectedIndexChanged);
-			// 
-			// ustawienia_miesiaca_koniec
-			// 
-			this.ustawienia_miesiaca_koniec.FormattingEnabled = true;
-			this.ustawienia_miesiaca_koniec.Location = new System.Drawing.Point(77, 159);
-			this.ustawienia_miesiaca_koniec.Margin = new System.Windows.Forms.Padding(4);
-			this.ustawienia_miesiaca_koniec.Name = "ustawienia_miesiaca_koniec";
-			this.ustawienia_miesiaca_koniec.Size = new System.Drawing.Size(49, 24);
-			this.ustawienia_miesiaca_koniec.TabIndex = 19;
-			this.ustawienia_miesiaca_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_miesiaca_koniecSelectedIndexChanged);
-			this.ustawienia_miesiaca_koniec.Leave += new System.EventHandler(this.Ustawienia_miesiaca_koniecSelectedIndexChanged);
-			// 
-			// ustawienia_dnia_koniec
-			// 
-			this.ustawienia_dnia_koniec.FormattingEnabled = true;
-			this.ustawienia_dnia_koniec.Location = new System.Drawing.Point(16, 159);
-			this.ustawienia_dnia_koniec.Margin = new System.Windows.Forms.Padding(4);
-			this.ustawienia_dnia_koniec.Name = "ustawienia_dnia_koniec";
-			this.ustawienia_dnia_koniec.Size = new System.Drawing.Size(52, 24);
-			this.ustawienia_dnia_koniec.TabIndex = 17;
-			this.ustawienia_dnia_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_dnia_koniecSelectedIndexChanged);
-			this.ustawienia_dnia_koniec.Leave += new System.EventHandler(this.Ustawienia_dnia_koniecSelectedIndexChanged);
-			// 
-			// ustawienie_minuty_koniec
-			// 
-			this.ustawienie_minuty_koniec.FormattingEnabled = true;
-			this.ustawienie_minuty_koniec.Location = new System.Drawing.Point(301, 158);
-			this.ustawienie_minuty_koniec.Margin = new System.Windows.Forms.Padding(4);
-			this.ustawienie_minuty_koniec.Name = "ustawienie_minuty_koniec";
-			this.ustawienie_minuty_koniec.Size = new System.Drawing.Size(52, 24);
-			this.ustawienie_minuty_koniec.TabIndex = 20;
-			this.ustawienie_minuty_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_minuty_koniecSelectedIndexChanged);
-			this.ustawienie_minuty_koniec.Leave += new System.EventHandler(this.Ustawienie_minuty_koniecSelectedIndexChanged);
-			// 
-			// ustawienie_godziny_koniec
-			// 
-			this.ustawienie_godziny_koniec.FormattingEnabled = true;
-			this.ustawienie_godziny_koniec.Location = new System.Drawing.Point(243, 158);
-			this.ustawienie_godziny_koniec.Margin = new System.Windows.Forms.Padding(4);
-			this.ustawienie_godziny_koniec.Name = "ustawienie_godziny_koniec";
-			this.ustawienie_godziny_koniec.Size = new System.Drawing.Size(56, 24);
-			this.ustawienie_godziny_koniec.TabIndex = 19;
-			this.ustawienie_godziny_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_godziny_koniecSelectedIndexChanged);
-			this.ustawienie_godziny_koniec.Leave += new System.EventHandler(this.Ustawienie_godziny_koniecSelectedIndexChanged);
-			// 
-			// ustawienie_minuty_poczatek
-			// 
-			this.ustawienie_minuty_poczatek.FormattingEnabled = true;
-			this.ustawienie_minuty_poczatek.Location = new System.Drawing.Point(301, 36);
-			this.ustawienie_minuty_poczatek.Margin = new System.Windows.Forms.Padding(4);
-			this.ustawienie_minuty_poczatek.Name = "ustawienie_minuty_poczatek";
-			this.ustawienie_minuty_poczatek.Size = new System.Drawing.Size(52, 24);
-			this.ustawienie_minuty_poczatek.TabIndex = 18;
-			this.ustawienie_minuty_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_minuty_poczatekSelectedIndexChanged);
-			this.ustawienie_minuty_poczatek.Leave += new System.EventHandler(this.Ustawienie_minuty_poczatekSelectedIndexChanged);
-			// 
-			// ustawienie_godziny_poczatek
-			// 
-			this.ustawienie_godziny_poczatek.FormattingEnabled = true;
-			this.ustawienie_godziny_poczatek.Location = new System.Drawing.Point(243, 36);
-			this.ustawienie_godziny_poczatek.Margin = new System.Windows.Forms.Padding(4);
-			this.ustawienie_godziny_poczatek.Name = "ustawienie_godziny_poczatek";
-			this.ustawienie_godziny_poczatek.Size = new System.Drawing.Size(56, 24);
-			this.ustawienie_godziny_poczatek.TabIndex = 17;
-			this.ustawienie_godziny_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_godziny_poczatekSelectedIndexChanged);
-			this.ustawienie_godziny_poczatek.Leave += new System.EventHandler(this.Ustawienie_godziny_poczatekSelectedIndexChanged);
-			// 
-			// ustawienia_rok_poczatek
-			// 
-			this.ustawienia_rok_poczatek.FormattingEnabled = true;
-			this.ustawienia_rok_poczatek.Location = new System.Drawing.Point(136, 36);
-			this.ustawienia_rok_poczatek.Margin = new System.Windows.Forms.Padding(4);
-			this.ustawienia_rok_poczatek.Name = "ustawienia_rok_poczatek";
-			this.ustawienia_rok_poczatek.Size = new System.Drawing.Size(79, 24);
-			this.ustawienia_rok_poczatek.TabIndex = 16;
-			this.ustawienia_rok_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_rok_poczatekSelectedIndexChanged);
-			this.ustawienia_rok_poczatek.Leave += new System.EventHandler(this.Ustawienia_rok_poczatekSelectedIndexChanged);
-			// 
-			// ustawienie_miesiaca_poczatek
-			// 
-			this.ustawienie_miesiaca_poczatek.FormattingEnabled = true;
-			this.ustawienie_miesiaca_poczatek.Location = new System.Drawing.Point(77, 36);
-			this.ustawienie_miesiaca_poczatek.Margin = new System.Windows.Forms.Padding(4);
-			this.ustawienie_miesiaca_poczatek.Name = "ustawienie_miesiaca_poczatek";
-			this.ustawienie_miesiaca_poczatek.Size = new System.Drawing.Size(49, 24);
-			this.ustawienie_miesiaca_poczatek.TabIndex = 15;
-			this.ustawienie_miesiaca_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_miesiaca_poczatekSelectedIndexChanged);
-			this.ustawienie_miesiaca_poczatek.Leave += new System.EventHandler(this.Ustawienie_miesiaca_poczatekSelectedIndexChanged);
+			this.ustaw_wpis.BackColor = System.Drawing.SystemColors.HighlightText;
+			this.ustaw_wpis.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.ustaw_wpis.Location = new System.Drawing.Point(0, 193);
+			this.ustaw_wpis.Margin = new System.Windows.Forms.Padding(4);
+			this.ustaw_wpis.Name = "ustaw_wpis";
+			this.ustaw_wpis.Size = new System.Drawing.Size(360, 28);
+			this.ustaw_wpis.TabIndex = 11;
+			this.ustaw_wpis.Text = "Wpisz";
+			this.ustaw_wpis.UseVisualStyleBackColor = false;
+			this.ustaw_wpis.Click += new System.EventHandler(this.Ustaw_wpisClick);
 			// 
 			// ustawienia_dnia_poczatek
 			// 
@@ -328,6 +244,105 @@ namespace gr._1
 			this.ustawienia_dnia_poczatek.TabIndex = 0;
 			this.ustawienia_dnia_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_dnia_poczatekSelectedIndexChanged);
 			this.ustawienia_dnia_poczatek.Leave += new System.EventHandler(this.Ustawienia_dnia_poczatekSelectedIndexChanged);
+			// 
+			// ustawienie_miesiaca_poczatek
+			// 
+			this.ustawienie_miesiaca_poczatek.FormattingEnabled = true;
+			this.ustawienie_miesiaca_poczatek.Location = new System.Drawing.Point(77, 36);
+			this.ustawienie_miesiaca_poczatek.Margin = new System.Windows.Forms.Padding(4);
+			this.ustawienie_miesiaca_poczatek.Name = "ustawienie_miesiaca_poczatek";
+			this.ustawienie_miesiaca_poczatek.Size = new System.Drawing.Size(49, 24);
+			this.ustawienie_miesiaca_poczatek.TabIndex = 1;
+			this.ustawienie_miesiaca_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_miesiaca_poczatekSelectedIndexChanged);
+			this.ustawienie_miesiaca_poczatek.Leave += new System.EventHandler(this.Ustawienie_miesiaca_poczatekSelectedIndexChanged);
+			// 
+			// ustawienia_rok_poczatek
+			// 
+			this.ustawienia_rok_poczatek.FormattingEnabled = true;
+			this.ustawienia_rok_poczatek.Location = new System.Drawing.Point(136, 36);
+			this.ustawienia_rok_poczatek.Margin = new System.Windows.Forms.Padding(4);
+			this.ustawienia_rok_poczatek.Name = "ustawienia_rok_poczatek";
+			this.ustawienia_rok_poczatek.Size = new System.Drawing.Size(79, 24);
+			this.ustawienia_rok_poczatek.TabIndex = 2;
+			this.ustawienia_rok_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_rok_poczatekSelectedIndexChanged);
+			this.ustawienia_rok_poczatek.Leave += new System.EventHandler(this.Ustawienia_rok_poczatekSelectedIndexChanged);
+			// 
+			// ustawienie_godziny_poczatek
+			// 
+			this.ustawienie_godziny_poczatek.FormattingEnabled = true;
+			this.ustawienie_godziny_poczatek.Location = new System.Drawing.Point(243, 36);
+			this.ustawienie_godziny_poczatek.Margin = new System.Windows.Forms.Padding(4);
+			this.ustawienie_godziny_poczatek.Name = "ustawienie_godziny_poczatek";
+			this.ustawienie_godziny_poczatek.Size = new System.Drawing.Size(56, 24);
+			this.ustawienie_godziny_poczatek.TabIndex = 3;
+			this.ustawienie_godziny_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_godziny_poczatekSelectedIndexChanged);
+			this.ustawienie_godziny_poczatek.Leave += new System.EventHandler(this.Ustawienie_godziny_poczatekSelectedIndexChanged);
+			// 
+			// ustawienie_minuty_poczatek
+			// 
+			this.ustawienie_minuty_poczatek.FormattingEnabled = true;
+			this.ustawienie_minuty_poczatek.Location = new System.Drawing.Point(301, 36);
+			this.ustawienie_minuty_poczatek.Margin = new System.Windows.Forms.Padding(4);
+			this.ustawienie_minuty_poczatek.Name = "ustawienie_minuty_poczatek";
+			this.ustawienie_minuty_poczatek.Size = new System.Drawing.Size(52, 24);
+			this.ustawienie_minuty_poczatek.TabIndex = 4;
+			this.ustawienie_minuty_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_minuty_poczatekSelectedIndexChanged);
+			this.ustawienie_minuty_poczatek.Leave += new System.EventHandler(this.Ustawienie_minuty_poczatekSelectedIndexChanged);
+			// 
+			// ustawienia_dnia_koniec
+			// 
+			this.ustawienia_dnia_koniec.FormattingEnabled = true;
+			this.ustawienia_dnia_koniec.Location = new System.Drawing.Point(16, 159);
+			this.ustawienia_dnia_koniec.Margin = new System.Windows.Forms.Padding(4);
+			this.ustawienia_dnia_koniec.Name = "ustawienia_dnia_koniec";
+			this.ustawienia_dnia_koniec.Size = new System.Drawing.Size(52, 24);
+			this.ustawienia_dnia_koniec.TabIndex = 5;
+			this.ustawienia_dnia_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_dnia_koniecSelectedIndexChanged);
+			this.ustawienia_dnia_koniec.Leave += new System.EventHandler(this.Ustawienia_dnia_koniecSelectedIndexChanged);
+			// 
+			// ustawienia_miesiaca_koniec
+			// 
+			this.ustawienia_miesiaca_koniec.FormattingEnabled = true;
+			this.ustawienia_miesiaca_koniec.Location = new System.Drawing.Point(77, 159);
+			this.ustawienia_miesiaca_koniec.Margin = new System.Windows.Forms.Padding(4);
+			this.ustawienia_miesiaca_koniec.Name = "ustawienia_miesiaca_koniec";
+			this.ustawienia_miesiaca_koniec.Size = new System.Drawing.Size(49, 24);
+			this.ustawienia_miesiaca_koniec.TabIndex = 6;
+			this.ustawienia_miesiaca_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_miesiaca_koniecSelectedIndexChanged);
+			this.ustawienia_miesiaca_koniec.Leave += new System.EventHandler(this.Ustawienia_miesiaca_koniecSelectedIndexChanged);
+			// 
+			// ustawienia_roku_koniec
+			// 
+			this.ustawienia_roku_koniec.FormattingEnabled = true;
+			this.ustawienia_roku_koniec.Location = new System.Drawing.Point(136, 159);
+			this.ustawienia_roku_koniec.Margin = new System.Windows.Forms.Padding(4);
+			this.ustawienia_roku_koniec.Name = "ustawienia_roku_koniec";
+			this.ustawienia_roku_koniec.Size = new System.Drawing.Size(79, 24);
+			this.ustawienia_roku_koniec.TabIndex = 7;
+			this.ustawienia_roku_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_roku_koniecSelectedIndexChanged);
+			this.ustawienia_roku_koniec.Leave += new System.EventHandler(this.Ustawienia_roku_koniecSelectedIndexChanged);
+			// 
+			// ustawienie_godziny_koniec
+			// 
+			this.ustawienie_godziny_koniec.FormattingEnabled = true;
+			this.ustawienie_godziny_koniec.Location = new System.Drawing.Point(243, 158);
+			this.ustawienie_godziny_koniec.Margin = new System.Windows.Forms.Padding(4);
+			this.ustawienie_godziny_koniec.Name = "ustawienie_godziny_koniec";
+			this.ustawienie_godziny_koniec.Size = new System.Drawing.Size(56, 24);
+			this.ustawienie_godziny_koniec.TabIndex = 8;
+			this.ustawienie_godziny_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_godziny_koniecSelectedIndexChanged);
+			this.ustawienie_godziny_koniec.Leave += new System.EventHandler(this.Ustawienie_godziny_koniecSelectedIndexChanged);
+			// 
+			// ustawienie_minuty_koniec
+			// 
+			this.ustawienie_minuty_koniec.FormattingEnabled = true;
+			this.ustawienie_minuty_koniec.Location = new System.Drawing.Point(301, 158);
+			this.ustawienie_minuty_koniec.Margin = new System.Windows.Forms.Padding(4);
+			this.ustawienie_minuty_koniec.Name = "ustawienie_minuty_koniec";
+			this.ustawienie_minuty_koniec.Size = new System.Drawing.Size(52, 24);
+			this.ustawienie_minuty_koniec.TabIndex = 9;
+			this.ustawienie_minuty_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_minuty_koniecSelectedIndexChanged);
+			this.ustawienie_minuty_koniec.Leave += new System.EventHandler(this.Ustawienie_minuty_koniecSelectedIndexChanged);
 			// 
 			// wpis_tekst3
 			// 
@@ -359,36 +374,27 @@ namespace gr._1
 			this.wpis_tekst1.TabIndex = 12;
 			this.wpis_tekst1.Text = "Wybierz datę i godzinę początku wpisu";
 			// 
-			// czy_trwa_kilka_dni
-			// 
-			this.czy_trwa_kilka_dni.AutoSize = true;
-			this.czy_trwa_kilka_dni.Location = new System.Drawing.Point(77, 114);
-			this.czy_trwa_kilka_dni.Margin = new System.Windows.Forms.Padding(4);
-			this.czy_trwa_kilka_dni.Name = "czy_trwa_kilka_dni";
-			this.czy_trwa_kilka_dni.Size = new System.Drawing.Size(221, 21);
-			this.czy_trwa_kilka_dni.TabIndex = 11;
-			this.czy_trwa_kilka_dni.Text = "Czy wydarzenie trwa kilka dni?";
-			this.czy_trwa_kilka_dni.UseVisualStyleBackColor = true;
-			// 
 			// ustawienie_tytul_wydarzenia
 			// 
 			this.ustawienie_tytul_wydarzenia.Location = new System.Drawing.Point(16, 85);
 			this.ustawienie_tytul_wydarzenia.Margin = new System.Windows.Forms.Padding(4);
 			this.ustawienie_tytul_wydarzenia.Name = "ustawienie_tytul_wydarzenia";
 			this.ustawienie_tytul_wydarzenia.Size = new System.Drawing.Size(325, 22);
-			this.ustawienie_tytul_wydarzenia.TabIndex = 4;
+			this.ustawienie_tytul_wydarzenia.TabIndex = 10;
 			// 
-			// zatwierdz_ustaw
+			// usun_wpis
 			// 
-			this.zatwierdz_ustaw.BackColor = System.Drawing.SystemColors.HighlightText;
-			this.zatwierdz_ustaw.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.zatwierdz_ustaw.Location = new System.Drawing.Point(0, 221);
-			this.zatwierdz_ustaw.Margin = new System.Windows.Forms.Padding(4);
-			this.zatwierdz_ustaw.Name = "zatwierdz_ustaw";
-			this.zatwierdz_ustaw.Size = new System.Drawing.Size(360, 28);
-			this.zatwierdz_ustaw.TabIndex = 3;
-			this.zatwierdz_ustaw.Text = "Wpisz";
-			this.zatwierdz_ustaw.UseVisualStyleBackColor = false;
+			this.usun_wpis.BackColor = System.Drawing.SystemColors.HighlightText;
+			this.usun_wpis.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.usun_wpis.Location = new System.Drawing.Point(0, 221);
+			this.usun_wpis.Margin = new System.Windows.Forms.Padding(4);
+			this.usun_wpis.Name = "usun_wpis";
+			this.usun_wpis.Size = new System.Drawing.Size(360, 28);
+			this.usun_wpis.TabIndex = 12;
+			this.usun_wpis.Tag = "";
+			this.usun_wpis.Text = "Usuń";
+			this.toolTip1.SetToolTip(this.usun_wpis, "Usuwa wpis zaczynający się o wpisanej porze.");
+			this.usun_wpis.UseVisualStyleBackColor = false;
 			// 
 			// splitContainer1
 			// 
@@ -447,6 +453,7 @@ namespace gr._1
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Kalendarz";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1FormClosing);
 			this.panel_menu.ResumeLayout(false);
 			this.panel_grafika.ResumeLayout(false);
 			this.panel_grafika.PerformLayout();
@@ -460,6 +467,9 @@ namespace gr._1
 			this.panel_nagluwek_miesiac.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.ToolTip toolTip1;
+		private System.Windows.Forms.Button ustaw_wpis;
+		private System.Windows.Forms.Button usun_wpis;
 
 		private System.Windows.Forms.Panel panel1;
 
@@ -471,9 +481,8 @@ namespace gr._1
 		private System.Windows.Forms.Panel panel_miesiac;
 		private System.Windows.Forms.Panel wpisy_panel;
 		private System.Windows.Forms.TextBox ustawienie_tytul_wydarzenia;
-		private System.Windows.Forms.Button zatwierdz_ustaw;
 		private System.Windows.Forms.SplitContainer splitContainer1;
-		private System.Windows.Forms.CheckBox czy_trwa_kilka_dni;
+		//private System.Windows.Forms.CheckBox czy_trwa_kilka_dni;
 		private System.Windows.Forms.Label wpis_tekst1;
 		private System.Windows.Forms.Label wpis_tekst3;
 		private System.Windows.Forms.Label wpis_tekst2;
@@ -602,6 +611,38 @@ namespace gr._1
 		}
 		
 
+		
+		void Ustaw_wpisClick(object sender, EventArgs e)
+		{
+			//@FIX:Tu chyba coś nie tak
+			if((Data_dzien)poczatek+1<=(Data_dzien)koniec)
+			{
+				Data i=poczatek;
+				Data j=poczatek+1;
+				while(j<koniec)
+				{
+					Wpis nowy=new Wpis(i,j,ustawienie_tytul_wydarzenia.Text);
+					aplikacja.Dodaj(nowy);
+					i++; j++;
+				}
+				aplikacja.Dodaj(new Wpis(i,koniec,ustawienie_tytul_wydarzenia.Text));
+			} 
+			else
+			{
+			
+				aplikacja.Dodaj(new Wpis(poczatek,koniec,ustawienie_tytul_wydarzenia.Text));
+			}
+			poczatek=new Data();
+			koniec=new Data();
+			OdswierzDni();
+			OdswierzPoczatek();
+			OdswierzKoniec();
+			Odswierz();
+		}
+		
+		void Form1FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+		{
+			aplikacja.Zamknij();
+		}
 	}
 }
-

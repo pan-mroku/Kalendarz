@@ -22,11 +22,13 @@ namespace gr._1
 			poczatek=new Data();
 			koniec=new Data();
 			InitializeComponent();
+			GenerujMiesiac();
 			button_mieciac_tyl.BackgroundImage=gr._1.Properties.Resources.strzałka_lewo;
 			button_miesiac_nap.BackgroundImage=gr._1.Properties.Resources.strzałka_prawo;
 			
 			//nadaje pierwsze widoczne wartości
-			ustawienia_miesiaca_koniec.Text = koniec.Miesiac().ToString();
+
+			/*ustawienia_miesiaca_koniec.Text = koniec.Miesiac().ToString();
 			ustawienie_miesiaca_poczatek.Text = poczatek.Miesiac().ToString();
 			ustawienia_rok_poczatek.Text = poczatek.Rok().ToString();
 			ustawienia_roku_koniec.Text = koniec.Rok().ToString();
@@ -35,12 +37,9 @@ namespace gr._1
 			ustawienie_minuty_koniec.Text = koniec.Minuta().ToString();
 			ustawienie_minuty_poczatek.Text = poczatek.Minuta().ToString();
 			ustawienia_dnia_koniec.Text = koniec.Dzien().ToString();
-			ustawienia_dnia_poczatek.Text = poczatek.Dzien().ToString();
+			ustawienia_dnia_poczatek.Text = poczatek.Dzien().ToString();*/
 			
 			panel_grafika.Controls.Add(numer_roku);
-			
-			OdswierzDni();
-			GenerujMiesiac();
 			
 			for (var i = aplikacja.Data().Rok()-1; i < aplikacja.Data().Rok()+5; i++)
 			{
@@ -59,6 +58,10 @@ namespace gr._1
 				
 			}
 			GenerujObraz();
+			
+			OdswierzDni();
+			OdswierzPoczatek();
+			OdswierzKoniec();
 
 		}
 		private void GenerujObraz()
@@ -144,12 +147,6 @@ namespace gr._1
 			Odswierz();
 		}
 		
-		/*private Data Ustawienia(bool czyKoniec)
-		{
-			if(czyKoniec)
-				return new Data(ToIntRok(ustawienia_rok_poczatek.Text
-			}*/
-		
 		private void OdswierzDni()
 		{
 			ustawienia_dnia_poczatek.Items.Clear();
@@ -160,6 +157,16 @@ namespace gr._1
 
 			for (int i = 1; i <= Data_dzien.LiczbaDniWMiesiac(koniec.Rok(),koniec.Miesiac()); i++)
 				ustawienia_dnia_koniec.Items.Add(i);
+		}
+		
+		private void OdswierzPoczatek()
+		{
+			ustawienia_rok_poczatek.Text=poczatek.Rok().ToString();
+			ustawienie_miesiaca_poczatek.Text=poczatek.Miesiac().ToString();
+			ustawienia_dnia_poczatek.Text=poczatek.Dzien().ToString();
+			ustawienie_godziny_poczatek.Text=poczatek.Godzina().ToString();
+			ustawienie_minuty_poczatek.Text=poczatek.Minuta().ToString();
+			ustawienie_tytul_wydarzenia.Text="";
 		}
 		
 		private void OdswierzKoniec()
@@ -175,12 +182,17 @@ namespace gr._1
 		private void Odswierz()
 		{
 			//@TODO: zmiana obrazka/napisu w miesiac_obrazek (kto ma te obrazki zrobić?)
+			var przycisk=this.panel2.Controls[0];
+			List<Bitmap> lista=aplikacja.Miesiac(aplikacja.Data(),przycisk.Width,przycisk.Height);
 			Data_dzien d=aplikacja.Data();
 			numer_roku.Text = (d+7).Rok().ToString();
 			
 			for(int i=0;i<35;i++,d++)
 			{
-				this.panel2.Controls[i].Text=d.Dzien().ToString()+"\n"+d.Miesiac().ToString()+"\n"+d.Rok().ToString();
+				przycisk=this.panel2.Controls[i];
+				przycisk.Text=d.Dzien().ToString()+"\n"+d.Miesiac().ToString();
+				((System.Windows.Forms.Button)przycisk).Image=lista[i];
+				
 			}
 		}
 		
