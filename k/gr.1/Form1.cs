@@ -207,7 +207,18 @@ namespace gr._1
 			aplikacja.Naprzod();
 			Odswierz();
 		}
-		
+
+
+
+        private void zapisz_button_Click_1(object sender, EventArgs e)
+        {
+            aplikacja.Zapisz();
+        }
+
+        private void wczytywanie_button_Click_1(object sender, EventArgs e)
+        {
+            aplikacja.Wczytaj();
+        }
 
 		
 	}

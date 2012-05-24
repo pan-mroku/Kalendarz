@@ -68,6 +68,41 @@ public class Aplikacja
 			MessageBox.Show("Zmiany zostały zapisane.", "Zapis zmian");
 		}
 	}
+    public void Wczytaj()
+    {
+        kalendarz = new Kalendarz();
+
+        otwórz_plik = new OpenFileDialog();
+        otwórz_plik.InitialDirectory = "c:\\";
+        otwórz_plik.FileName = "";
+        otwórz_plik.Filter = "pliki Kalendarza (*.kalen)|*.kalen|All files (*.*)|*.*";
+        otwórz_plik.FilterIndex = 2;
+        otwórz_plik.RestoreDirectory = true;
+
+        if (otwórz_plik.ShowDialog() == DialogResult.OK)
+        {
+            Stream plik = otwórz_plik.OpenFile();
+            kalendarz.Wczytaj(plik);
+            plik.Flush();
+            plik.Close();
+        }
+
+
+    }
+    public void Zapisz()
+    {
+        var pytanie = MessageBox.Show("Czy chcesz zapisać zmiany?", "Zapis zmian?", MessageBoxButtons.YesNo);
+        if (pytanie == DialogResult.Yes)
+        {
+            if (zapisz_plik.ShowDialog() == DialogResult.OK)
+            {
+                Stream plik = zapisz_plik.OpenFile();
+                kalendarz.Zapisz(plik);
+                plik.Flush();
+                plik.Close();
+            }
+        }
+    }
 	public Data_dzien Data()
 	{
 		return data;

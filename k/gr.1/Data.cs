@@ -1,4 +1,6 @@
 using System;
+
+[Serializable]
 public class Data : Data_dzien  {
 	private int godzina;
 	private int minuta;
