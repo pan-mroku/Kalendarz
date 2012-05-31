@@ -162,7 +162,6 @@ public class Aplikacja
             int poczatek=dat_pocz.Godzina()*60+dat_pocz.Minuta();
             Data dat_kon=wpis.Koniec();
             int koniec=dat_kon.Godzina()*60+dat_kon.Minuta();
-            string tytul = wpis.Tytul();
             
             int R = new Random().Next(1, 255);
             int G = new Random().Next(1, 255);

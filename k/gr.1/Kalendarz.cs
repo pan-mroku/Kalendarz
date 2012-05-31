@@ -106,7 +106,6 @@ public class Kalendarz
 
 
             //***********SORTOWANIE WPISÓW***********
-            Wpis tmp_wpis2 = wpisy_dnia[0];
             int i = 0;
             /*while(wpis > tmp_wpis2) //@CO TO JEST?!
             {
