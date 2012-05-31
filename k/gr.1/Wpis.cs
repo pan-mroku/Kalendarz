@@ -79,4 +79,9 @@ public class Wpis
     {
             return tytul;
     }
+    public override string ToString()
+	{
+		return string.Format("[Wpis Poczatek={0}, Koniec={1}, Tytul={2}]", poczatek, koniec, tytul);
+	}
+
 }

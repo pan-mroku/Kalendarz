@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace gr._1
 {
@@ -97,6 +97,7 @@ namespace gr._1
 			this.zapisz_button.TabIndex = 1;
 			this.zapisz_button.Text = "Zapisz";
 			this.zapisz_button.UseVisualStyleBackColor = false;
+			this.zapisz_button.Click += new System.EventHandler(this.zapisz_button_Click_1);
 			// 
 			// wczytywanie_button
 			// 
@@ -110,6 +111,7 @@ namespace gr._1
 			this.wczytywanie_button.TabIndex = 0;
 			this.wczytywanie_button.Text = "Wczytaj";
 			this.wczytywanie_button.UseVisualStyleBackColor = false;
+			this.wczytywanie_button.Click += new System.EventHandler(this.wczytywanie_button_Click_1);
 			// 
 			// panel2
 			// 

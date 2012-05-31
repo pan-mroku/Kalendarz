@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,7 +62,7 @@ namespace gr._1
 			OdswierzDni();
 			OdswierzPoczatek();
 			OdswierzKoniec();
-
+			
 		}
 		private void GenerujObraz()
 		{
@@ -218,6 +218,7 @@ namespace gr._1
         private void wczytywanie_button_Click_1(object sender, EventArgs e)
         {
             aplikacja.Wczytaj();
+            Odswierz();
         }
 
 		

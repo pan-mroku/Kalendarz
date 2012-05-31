@@ -191,4 +191,10 @@ public class Data : Data_dzien  {
 	public override int GetHashCode() {
 		return (base.GetHashCode() + godzina*60 + minuta);
 	}
+    public override string ToString()
+	{
+    	return base.ToString()+"-"+godzina+"-"+minuta;
+    	//return string.Format(base.ToString()+", [Data Godzina={0}, Minuta={1}]", godzina, minuta);
+	}
+
 }

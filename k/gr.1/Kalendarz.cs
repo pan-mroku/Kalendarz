@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Windows.Forms;
 
 [Serializable]
 public class Kalendarz
@@ -89,7 +90,7 @@ public class Kalendarz
     }
     public Data_dzien Dodaj(Wpis wpis)
     {
-    	Data_dzien poczatek = (Data_dzien)wpis.Poczatek();
+    	Data_dzien poczatek = new Data_dzien(wpis.Poczatek()); //@!! C# lubi referencje, więc bez użycia new poczatek był typu Data!
         if (kalendarz.ContainsKey(poczatek)) //jeżeli wpis danego dnia już istnieje
         {
             List<Wpis> wpisy_dnia = kalendarz[poczatek];
@@ -107,17 +108,20 @@ public class Kalendarz
             //***********SORTOWANIE WPISÓW***********
             Wpis tmp_wpis2 = wpisy_dnia[0];
             int i = 0;
-            while(wpis > tmp_wpis2)
+            /*while(wpis > tmp_wpis2) //@CO TO JEST?!
             {
                 i++;
-            }
+            }*/ 
+            for(;i<wpisy_dnia.Count;i++)
+            	if(wpis<wpisy_dnia[i])
+            		break;
 
             kalendarz[poczatek].Insert(i, wpis);
             //***********KONIEC SORTOWANIA***********                           
         }
         else
         {
-            kalendarz.Add(poczatek, new List<Wpis>() { wpis }); //jeżeli danego dnia nie ma jeszcze wpisów to stwórz nową liste wpisów i dodaj wpis
+        	kalendarz.Add(poczatek, new List<Wpis>() {wpis}); //jeżeli danego dnia nie ma jeszcze wpisów to stwórz nową liste wpisów i dodaj wpis
         }
         return poczatek;
     }
