@@ -36,7 +36,7 @@ public class Wpis
     public static bool operator !=(Wpis x, Wpis y)
     {
         return (x.poczatek != y.poczatek);
-       
+        
     }
     public override bool Equals(object obj)
     {
@@ -69,19 +69,19 @@ public class Wpis
     }
     public Data Poczatek()
     {
-            return poczatek;
+        return poczatek;
     }
     public Data Koniec()
     {
-            return koniec;
+        return koniec;
     }
     public string Tytul()
     {
-            return tytul;
+        return tytul;
     }
     public override string ToString()
-	{
-		return string.Format("[Wpis Poczatek={0}, Koniec={1}, Tytul={2}]", poczatek, koniec, tytul);
-	}
+    {
+        return string.Format("[Wpis Poczatek={0}, Koniec={1}, Tytul={2}]", poczatek, koniec, tytul);
+    }
 
 }

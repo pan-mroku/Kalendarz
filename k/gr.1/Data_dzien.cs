@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 public enum DniTygodnia { poniedziałek = 0, wtorek, środa, czwartek, piątek, sobota, niedziela };
 
@@ -11,9 +11,9 @@ public class Data_dzien
 
     public Data_dzien()
     {
-    	Rok(DateTime.Today.Year);
-    	Miesiac(DateTime.Today.Month);
-    	Dzien(DateTime.Today.Day);
+        Rok(DateTime.Today.Year);
+        Miesiac(DateTime.Today.Month);
+        Dzien(DateTime.Today.Day);
     }
 
     public Data_dzien(Data_dzien kopia)
@@ -87,7 +87,7 @@ public class Data_dzien
 
     public static Data_dzien operator +(Data_dzien x, int n)
     {
-    	Data_dzien nowy=new Data_dzien(x.rok,x.miesiac,x.dzien);
+        Data_dzien nowy=new Data_dzien(x.rok,x.miesiac,x.dzien);
         while (n > 0)
         {
             nowy.DodajDzien();
@@ -97,7 +97,7 @@ public class Data_dzien
     }
     public static Data_dzien operator -(Data_dzien x, int n)
     {
-    	Data_dzien nowy=new Data_dzien(x.rok,x.miesiac,x.dzien);
+        Data_dzien nowy=new Data_dzien(x.rok,x.miesiac,x.dzien);
         while (n > 0)
         {
             nowy.OdejmijDzien();
@@ -107,16 +107,16 @@ public class Data_dzien
     }
     public static Data_dzien operator ++ (Data_dzien x)
     {
-    	return x+1;
+        return x+1;
     }
 
     public static Data_dzien operator -- (Data_dzien x)
     {
-    	return x-1;
+        return x-1;
     }
 
     private bool CzyPrzestepny(int _rok) //zwraca true jeśli podany rok jest przestępny, jeśli nie to zwraca false
-    /*Rok jest przestępny jeżeli jest podzielny przez 4, ale nie jest podzielny przez 100 lub jest podzielny przez 400*/
+        /*Rok jest przestępny jeżeli jest podzielny przez 4, ale nie jest podzielny przez 100 lub jest podzielny przez 400*/
     {
         if (_rok % 4 == 0)
         {
@@ -158,7 +158,7 @@ public class Data_dzien
 
     public int LiczbaDniWMiesiac()
     {
-    	return LiczbaDniWMiesiac(rok,miesiac);
+        return LiczbaDniWMiesiac(rok,miesiac);
     }
     
     protected void DodajDzien()
@@ -219,8 +219,8 @@ public class Data_dzien
     }
 
     public void Dzien(int _dzien) //zmienia dzień na podany 1-31
-    /*Styczeń - 31, Luty - 28/29, Marzec - 31, Kwiecień - 30, Maj - 31, Czerwiec - 30, Lipiec - 31, Sierpień - 31,
-     *Wrzesień - 30, Październik - 31, Listopad - 30, Grudzień - 31*/
+        /*Styczeń - 31, Luty - 28/29, Marzec - 31, Kwiecień - 30, Maj - 31, Czerwiec - 30, Lipiec - 31, Sierpień - 31,
+         *Wrzesień - 30, Październik - 31, Listopad - 30, Grudzień - 31*/
     {
         List<int> m30 = new List<int>() { 4, 6, 9, 11 };
         List<int> m31 = new List<int>() { 1, 3, 5, 7, 8, 10, 12 };
@@ -281,11 +281,11 @@ public class Data_dzien
 
     public int Dzien()
     {
-       return dzien;
+        return dzien;
     }
 
     public DniTygodnia DzienTygodnia()
-/*W systemowej dacie dni zaczynają numerację od niedzieli*/
+        /*W systemowej dacie dni zaczynają numerację od niedzieli*/
     {
         DateTime dt = new DateTime(rok, miesiac, dzien);
         int liczbaDnia = (int)dt.DayOfWeek;

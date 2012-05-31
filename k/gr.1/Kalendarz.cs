@@ -90,14 +90,14 @@ public class Kalendarz
     }
     public Data_dzien Dodaj(Wpis wpis)
     {
-    	Data_dzien poczatek = new Data_dzien(wpis.Poczatek()); //@!! C# lubi referencje, więc bez użycia new poczatek był typu Data!
+        Data_dzien poczatek = new Data_dzien(wpis.Poczatek()); //@!! C# lubi referencje, więc bez użycia new poczatek był typu Data!
         if (kalendarz.ContainsKey(poczatek)) //jeżeli wpis danego dnia już istnieje
         {
             List<Wpis> wpisy_dnia = kalendarz[poczatek];
 
             foreach (var tmp_wpis in wpisy_dnia) //sprawdź czy taki wpis już istnieje
             {
-            	if (tmp_wpis.Poczatek() == wpis.Poczatek() && tmp_wpis.Koniec() == wpis.Koniec()) //jeżeli istnieje to
+                if (tmp_wpis.Poczatek() == wpis.Poczatek() && tmp_wpis.Koniec() == wpis.Koniec()) //jeżeli istnieje to
                 {
                     tmp_wpis.Tytul(wpis.Tytul()); //zmień nazwę
                     return poczatek;
@@ -111,17 +111,17 @@ public class Kalendarz
             /*while(wpis > tmp_wpis2) //@CO TO JEST?!
             {
                 i++;
-            }*/ 
+            }*/
             for(;i<wpisy_dnia.Count;i++)
-            	if(wpis<wpisy_dnia[i])
-            		break;
+                if(wpis<wpisy_dnia[i])
+                    break;
 
             kalendarz[poczatek].Insert(i, wpis);
-            //***********KONIEC SORTOWANIA***********                           
+            //***********KONIEC SORTOWANIA***********
         }
         else
         {
-        	kalendarz.Add(poczatek, new List<Wpis>() {wpis}); //jeżeli danego dnia nie ma jeszcze wpisów to stwórz nową liste wpisów i dodaj wpis
+            kalendarz.Add(poczatek, new List<Wpis>() {wpis}); //jeżeli danego dnia nie ma jeszcze wpisów to stwórz nową liste wpisów i dodaj wpis
         }
         return poczatek;
     }
