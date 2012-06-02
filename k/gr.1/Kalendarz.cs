@@ -124,6 +124,22 @@ public class Kalendarz
         }
         return poczatek;
     }
+    
+    //funkcja usuwająca pierwszy wpis o podanym tytule w danym dniu
+    public void Usun(Data_dzien dzien, string tytul)
+    {
+        if(kalendarz.ContainsKey(dzien))
+        {
+            var wpisy=kalendarz[dzien];
+            for(int i=0;i<wpisy.Count;i++)
+                if(wpisy[i].Tytul()==tytul)
+            {
+                kalendarz[dzien].RemoveAt(i);
+                break;
+            }
+        }
+    }
+    
     public List<Wpis> WpisyDnia(Data_dzien dzien)
     {
         if (kalendarz.ContainsKey(dzien))
