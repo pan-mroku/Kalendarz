@@ -139,12 +139,13 @@ namespace gr._1
         	this.panel_wydarzenia.Location = new System.Drawing.Point(0, 0);
         	this.panel_wydarzenia.Margin = new System.Windows.Forms.Padding(4);
         	this.panel_wydarzenia.Name = "panel_wydarzenia";
-        	this.panel_wydarzenia.Size = new System.Drawing.Size(375, 665);
+        	this.panel_wydarzenia.Size = new System.Drawing.Size(381, 665);
         	this.panel_wydarzenia.TabIndex = 2;
         	// 
         	// splitContainer2
         	// 
         	this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+        	this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
         	this.splitContainer2.IsSplitterFixed = true;
         	this.splitContainer2.Location = new System.Drawing.Point(0, 0);
         	this.splitContainer2.Name = "splitContainer2";
@@ -157,9 +158,10 @@ namespace gr._1
         	// splitContainer2.Panel2
         	// 
         	this.splitContainer2.Panel2.Controls.Add(this.panel3);
-        	this.splitContainer2.Size = new System.Drawing.Size(375, 665);
+        	this.splitContainer2.Size = new System.Drawing.Size(381, 665);
         	this.splitContainer2.SplitterDistance = 250;
         	this.splitContainer2.TabIndex = 0;
+        	this.splitContainer2.Resize += new System.EventHandler(this.SplitContainer2Resize);
         	// 
         	// wpisy_panel
         	// 
@@ -187,7 +189,7 @@ namespace gr._1
         	this.wpisy_panel.Location = new System.Drawing.Point(0, 0);
         	this.wpisy_panel.Margin = new System.Windows.Forms.Padding(4);
         	this.wpisy_panel.Name = "wpisy_panel";
-        	this.wpisy_panel.Size = new System.Drawing.Size(375, 249);
+        	this.wpisy_panel.Size = new System.Drawing.Size(381, 249);
         	this.wpisy_panel.TabIndex = 4;
         	// 
         	// ustaw_wpis
@@ -197,7 +199,7 @@ namespace gr._1
         	this.ustaw_wpis.Location = new System.Drawing.Point(0, 193);
         	this.ustaw_wpis.Margin = new System.Windows.Forms.Padding(4);
         	this.ustaw_wpis.Name = "ustaw_wpis";
-        	this.ustaw_wpis.Size = new System.Drawing.Size(375, 28);
+        	this.ustaw_wpis.Size = new System.Drawing.Size(381, 28);
         	this.ustaw_wpis.TabIndex = 11;
         	this.ustaw_wpis.Text = "Wpisz";
         	this.ustaw_wpis.UseVisualStyleBackColor = false;
@@ -211,8 +213,7 @@ namespace gr._1
         	this.ustawienia_dnia_poczatek.Name = "ustawienia_dnia_poczatek";
         	this.ustawienia_dnia_poczatek.Size = new System.Drawing.Size(52, 24);
         	this.ustawienia_dnia_poczatek.TabIndex = 0;
-        	this.ustawienia_dnia_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_dnia_poczatekSelectedIndexChanged);
-        	this.ustawienia_dnia_poczatek.TextChanged += new System.EventHandler(this.Ustawienia_dnia_poczatekSelectedIndexChanged);
+        	this.ustawienia_dnia_poczatek.Leave += new System.EventHandler(this.Ustawienia_dnia_poczatekSelectedIndexChanged);
         	// 
         	// ustawienie_miesiaca_poczatek
         	// 
@@ -222,8 +223,7 @@ namespace gr._1
         	this.ustawienie_miesiaca_poczatek.Name = "ustawienie_miesiaca_poczatek";
         	this.ustawienie_miesiaca_poczatek.Size = new System.Drawing.Size(49, 24);
         	this.ustawienie_miesiaca_poczatek.TabIndex = 1;
-        	this.ustawienie_miesiaca_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_miesiaca_poczatekSelectedIndexChanged);
-        	this.ustawienie_miesiaca_poczatek.TextChanged += new System.EventHandler(this.Ustawienie_miesiaca_poczatekSelectedIndexChanged);
+        	this.ustawienie_miesiaca_poczatek.Leave += new System.EventHandler(this.Ustawienie_miesiaca_poczatekSelectedIndexChanged);
         	// 
         	// ustawienia_rok_poczatek
         	// 
@@ -233,8 +233,7 @@ namespace gr._1
         	this.ustawienia_rok_poczatek.Name = "ustawienia_rok_poczatek";
         	this.ustawienia_rok_poczatek.Size = new System.Drawing.Size(79, 24);
         	this.ustawienia_rok_poczatek.TabIndex = 2;
-        	this.ustawienia_rok_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_rok_poczatekSelectedIndexChanged);
-        	this.ustawienia_rok_poczatek.TextChanged += new System.EventHandler(this.Ustawienia_rok_poczatekSelectedIndexChanged);
+        	this.ustawienia_rok_poczatek.Leave += new System.EventHandler(this.Ustawienia_rok_poczatekSelectedIndexChanged);
         	// 
         	// ustawienie_godziny_poczatek
         	// 
@@ -244,8 +243,7 @@ namespace gr._1
         	this.ustawienie_godziny_poczatek.Name = "ustawienie_godziny_poczatek";
         	this.ustawienie_godziny_poczatek.Size = new System.Drawing.Size(56, 24);
         	this.ustawienie_godziny_poczatek.TabIndex = 3;
-        	this.ustawienie_godziny_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_godziny_poczatekSelectedIndexChanged);
-        	this.ustawienie_godziny_poczatek.TextChanged += new System.EventHandler(this.Ustawienie_godziny_poczatekSelectedIndexChanged);
+        	this.ustawienie_godziny_poczatek.Leave += new System.EventHandler(this.Ustawienie_godziny_poczatekSelectedIndexChanged);
         	// 
         	// ustawienie_minuty_poczatek
         	// 
@@ -255,8 +253,7 @@ namespace gr._1
         	this.ustawienie_minuty_poczatek.Name = "ustawienie_minuty_poczatek";
         	this.ustawienie_minuty_poczatek.Size = new System.Drawing.Size(52, 24);
         	this.ustawienie_minuty_poczatek.TabIndex = 4;
-        	this.ustawienie_minuty_poczatek.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_minuty_poczatekSelectedIndexChanged);
-        	this.ustawienie_minuty_poczatek.TextChanged += new System.EventHandler(this.Ustawienie_minuty_poczatekSelectedIndexChanged);
+        	this.ustawienie_minuty_poczatek.Leave += new System.EventHandler(this.Ustawienie_minuty_poczatekSelectedIndexChanged);
         	// 
         	// ustawienia_dnia_koniec
         	// 
@@ -266,8 +263,7 @@ namespace gr._1
         	this.ustawienia_dnia_koniec.Name = "ustawienia_dnia_koniec";
         	this.ustawienia_dnia_koniec.Size = new System.Drawing.Size(52, 24);
         	this.ustawienia_dnia_koniec.TabIndex = 5;
-        	this.ustawienia_dnia_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_dnia_koniecSelectedIndexChanged);
-        	this.ustawienia_dnia_koniec.TextChanged += new System.EventHandler(this.Ustawienia_dnia_koniecSelectedIndexChanged);
+        	this.ustawienia_dnia_koniec.Leave += new System.EventHandler(this.Ustawienia_dnia_koniecSelectedIndexChanged);
         	// 
         	// ustawienia_miesiaca_koniec
         	// 
@@ -277,8 +273,7 @@ namespace gr._1
         	this.ustawienia_miesiaca_koniec.Name = "ustawienia_miesiaca_koniec";
         	this.ustawienia_miesiaca_koniec.Size = new System.Drawing.Size(49, 24);
         	this.ustawienia_miesiaca_koniec.TabIndex = 6;
-        	this.ustawienia_miesiaca_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_miesiaca_koniecSelectedIndexChanged);
-        	this.ustawienia_miesiaca_koniec.TextChanged += new System.EventHandler(this.Ustawienia_miesiaca_koniecSelectedIndexChanged);
+        	this.ustawienia_miesiaca_koniec.Leave += new System.EventHandler(this.Ustawienia_miesiaca_koniecSelectedIndexChanged);
         	// 
         	// ustawienia_roku_koniec
         	// 
@@ -288,8 +283,7 @@ namespace gr._1
         	this.ustawienia_roku_koniec.Name = "ustawienia_roku_koniec";
         	this.ustawienia_roku_koniec.Size = new System.Drawing.Size(79, 24);
         	this.ustawienia_roku_koniec.TabIndex = 7;
-        	this.ustawienia_roku_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienia_roku_koniecSelectedIndexChanged);
-        	this.ustawienia_roku_koniec.TextChanged += new System.EventHandler(this.Ustawienia_roku_koniecSelectedIndexChanged);
+        	this.ustawienia_roku_koniec.Leave += new System.EventHandler(this.Ustawienia_roku_koniecSelectedIndexChanged);
         	// 
         	// ustawienie_godziny_koniec
         	// 
@@ -299,8 +293,7 @@ namespace gr._1
         	this.ustawienie_godziny_koniec.Name = "ustawienie_godziny_koniec";
         	this.ustawienie_godziny_koniec.Size = new System.Drawing.Size(56, 24);
         	this.ustawienie_godziny_koniec.TabIndex = 8;
-        	this.ustawienie_godziny_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_godziny_koniecSelectedIndexChanged);
-        	this.ustawienie_godziny_koniec.TextChanged += new System.EventHandler(this.Ustawienie_godziny_koniecSelectedIndexChanged);
+        	this.ustawienie_godziny_koniec.Leave += new System.EventHandler(this.Ustawienie_godziny_koniecSelectedIndexChanged);
         	// 
         	// ustawienie_minuty_koniec
         	// 
@@ -310,8 +303,7 @@ namespace gr._1
         	this.ustawienie_minuty_koniec.Name = "ustawienie_minuty_koniec";
         	this.ustawienie_minuty_koniec.Size = new System.Drawing.Size(52, 24);
         	this.ustawienie_minuty_koniec.TabIndex = 9;
-        	this.ustawienie_minuty_koniec.SelectedIndexChanged += new System.EventHandler(this.Ustawienie_minuty_koniecSelectedIndexChanged);
-        	this.ustawienie_minuty_koniec.TextChanged += new System.EventHandler(this.Ustawienie_minuty_koniecSelectedIndexChanged);
+        	this.ustawienie_minuty_koniec.Leave += new System.EventHandler(this.Ustawienie_minuty_koniecSelectedIndexChanged);
         	// 
         	// wpis_tekst3
         	// 
@@ -358,7 +350,7 @@ namespace gr._1
         	this.usun_wpis.Location = new System.Drawing.Point(0, 221);
         	this.usun_wpis.Margin = new System.Windows.Forms.Padding(4);
         	this.usun_wpis.Name = "usun_wpis";
-        	this.usun_wpis.Size = new System.Drawing.Size(375, 28);
+        	this.usun_wpis.Size = new System.Drawing.Size(381, 28);
         	this.usun_wpis.TabIndex = 12;
         	this.usun_wpis.Tag = "";
         	this.usun_wpis.Text = "Usuń";
@@ -374,7 +366,7 @@ namespace gr._1
         	this.panel3.Location = new System.Drawing.Point(0, 0);
         	this.panel3.Margin = new System.Windows.Forms.Padding(0);
         	this.panel3.Name = "panel3";
-        	this.panel3.Size = new System.Drawing.Size(375, 411);
+        	this.panel3.Size = new System.Drawing.Size(381, 411);
         	this.panel3.TabIndex = 2;
         	// 
         	// picturebox_wpisy_dnia
@@ -382,7 +374,7 @@ namespace gr._1
         	this.picturebox_wpisy_dnia.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.picturebox_wpisy_dnia.Location = new System.Drawing.Point(0, 0);
         	this.picturebox_wpisy_dnia.Name = "picturebox_wpisy_dnia";
-        	this.picturebox_wpisy_dnia.Size = new System.Drawing.Size(375, 411);
+        	this.picturebox_wpisy_dnia.Size = new System.Drawing.Size(381, 411);
         	this.picturebox_wpisy_dnia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
         	this.picturebox_wpisy_dnia.TabIndex = 0;
         	this.picturebox_wpisy_dnia.TabStop = false;
@@ -405,7 +397,7 @@ namespace gr._1
         	// 
         	this.splitContainer1.Panel2.Controls.Add(this.panel_wydarzenia);
         	this.splitContainer1.Size = new System.Drawing.Size(923, 665);
-        	this.splitContainer1.SplitterDistance = 543;
+        	this.splitContainer1.SplitterDistance = 537;
         	this.splitContainer1.SplitterWidth = 5;
         	this.splitContainer1.TabIndex = 4;
         	// 
@@ -426,7 +418,7 @@ namespace gr._1
         	// splitContainer3.Panel2
         	// 
         	this.splitContainer3.Panel2.Controls.Add(this.panel2);
-        	this.splitContainer3.Size = new System.Drawing.Size(543, 665);
+        	this.splitContainer3.Size = new System.Drawing.Size(537, 665);
         	this.splitContainer3.SplitterDistance = 109;
         	this.splitContainer3.TabIndex = 2;
         	// 
@@ -439,7 +431,7 @@ namespace gr._1
         	this.panel_nagluwek_miesiac.Location = new System.Drawing.Point(0, 0);
         	this.panel_nagluwek_miesiac.Margin = new System.Windows.Forms.Padding(4);
         	this.panel_nagluwek_miesiac.Name = "panel_nagluwek_miesiac";
-        	this.panel_nagluwek_miesiac.Size = new System.Drawing.Size(543, 110);
+        	this.panel_nagluwek_miesiac.Size = new System.Drawing.Size(537, 110);
         	this.panel_nagluwek_miesiac.TabIndex = 4;
         	// 
         	// panel_miesiac
@@ -453,7 +445,7 @@ namespace gr._1
         	this.panel_miesiac.Location = new System.Drawing.Point(0, 48);
         	this.panel_miesiac.Margin = new System.Windows.Forms.Padding(4);
         	this.panel_miesiac.Name = "panel_miesiac";
-        	this.panel_miesiac.Size = new System.Drawing.Size(543, 62);
+        	this.panel_miesiac.Size = new System.Drawing.Size(537, 62);
         	this.panel_miesiac.TabIndex = 2;
         	// 
         	// panel_miesiac_image
@@ -463,7 +455,7 @@ namespace gr._1
         	this.panel_miesiac_image.Location = new System.Drawing.Point(72, 0);
         	this.panel_miesiac_image.Margin = new System.Windows.Forms.Padding(4);
         	this.panel_miesiac_image.Name = "panel_miesiac_image";
-        	this.panel_miesiac_image.Size = new System.Drawing.Size(399, 62);
+        	this.panel_miesiac_image.Size = new System.Drawing.Size(393, 62);
         	this.panel_miesiac_image.TabIndex = 5;
         	this.panel_miesiac_image.TabStop = false;
         	// 
@@ -484,7 +476,7 @@ namespace gr._1
         	this.button_miesiac_nap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
         	this.button_miesiac_nap.Dock = System.Windows.Forms.DockStyle.Right;
         	this.button_miesiac_nap.ForeColor = System.Drawing.Color.Black;
-        	this.button_miesiac_nap.Location = new System.Drawing.Point(471, 0);
+        	this.button_miesiac_nap.Location = new System.Drawing.Point(465, 0);
         	this.button_miesiac_nap.Margin = new System.Windows.Forms.Padding(4);
         	this.button_miesiac_nap.Name = "button_miesiac_nap";
         	this.button_miesiac_nap.Size = new System.Drawing.Size(72, 62);
@@ -500,7 +492,7 @@ namespace gr._1
         	this.panel_grafika.Location = new System.Drawing.Point(0, 0);
         	this.panel_grafika.Margin = new System.Windows.Forms.Padding(4);
         	this.panel_grafika.Name = "panel_grafika";
-        	this.panel_grafika.Size = new System.Drawing.Size(543, 36);
+        	this.panel_grafika.Size = new System.Drawing.Size(537, 36);
         	this.panel_grafika.TabIndex = 2;
         	// 
         	// numer_roku
@@ -511,7 +503,7 @@ namespace gr._1
         	this.numer_roku.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         	this.numer_roku.Location = new System.Drawing.Point(0, 0);
         	this.numer_roku.Name = "numer_roku";
-        	this.numer_roku.Size = new System.Drawing.Size(543, 36);
+        	this.numer_roku.Size = new System.Drawing.Size(537, 36);
         	this.numer_roku.TabIndex = 0;
         	this.numer_roku.Text = "2012";
         	this.numer_roku.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -523,7 +515,7 @@ namespace gr._1
         	this.panel2.Location = new System.Drawing.Point(0, 0);
         	this.panel2.Margin = new System.Windows.Forms.Padding(0);
         	this.panel2.Name = "panel2";
-        	this.panel2.Size = new System.Drawing.Size(543, 552);
+        	this.panel2.Size = new System.Drawing.Size(537, 552);
         	this.panel2.TabIndex = 2;
         	this.panel2.SizeChanged += new System.EventHandler(this.Panel2SizeChanged);
         	// 
@@ -545,11 +537,13 @@ namespace gr._1
         	this.Controls.Add(this.splitContainer1);
         	this.Controls.Add(this.panel_menu);
         	this.Cursor = System.Windows.Forms.Cursors.Hand;
+        	this.DoubleBuffered = true;
         	this.Margin = new System.Windows.Forms.Padding(4);
         	this.MinimumSize = new System.Drawing.Size(395, 234);
         	this.Name = "Form1";
         	this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         	this.Text = "Kalendarz";
+        	this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         	this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1FormClosing);
         	this.panel_menu.ResumeLayout(false);
         	this.panel_wydarzenia.ResumeLayout(false);

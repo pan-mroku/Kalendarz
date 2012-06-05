@@ -79,6 +79,17 @@ public class Wpis
     {
         return tytul;
     }
+    
+    /*zwraca d³ugoœc trwania wpisu w minutach
+     *( wiêcej ni¿ dzieñ wpis trwa³ nie bêdzie,
+     * ze wzglêdu na to jak jest napisane zdarzenie
+     * klikniêcia przycisku "wpisz")*/
+    public int Dlugosc()
+    {
+        int godziny=koniec.Godzina()-poczatek.Godzina();
+        int minuty=koniec.Minuta()-koniec.Minuta();
+        return godziny*60+minuty;
+    }
     public override string ToString()
     {
         return string.Format("[Wpis Poczatek={0}, Koniec={1}, Tytul={2}]", poczatek, koniec, tytul);

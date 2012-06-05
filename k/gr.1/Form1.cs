@@ -257,6 +257,7 @@ namespace gr._1
 
         void Ustawienia_rok_poczatekSelectedIndexChanged(object sender, System.EventArgs e)
         {
+            if(ustawienia_rok_poczatek.Text=="")return;
             poczatek.Rok(ToIntRok(ustawienia_rok_poczatek.Text));
             if(koniec<poczatek)
                 koniec.Rok(poczatek.Rok());
@@ -267,6 +268,7 @@ namespace gr._1
         
         void Ustawienia_roku_koniecSelectedIndexChanged(object sender, System.EventArgs e)
         {
+            if(ustawienia_roku_koniec.Text=="")return;
             koniec.Rok(ToIntRok(ustawienia_roku_koniec.Text));
             if(koniec<poczatek)
                 koniec.Rok(poczatek.Rok());
@@ -277,6 +279,8 @@ namespace gr._1
         
         void Ustawienie_miesiaca_poczatekSelectedIndexChanged(object sender, System.EventArgs e)
         {
+            if(ustawienie_miesiaca_poczatek.Text=="")return;
+            if(Convert.ToInt32(ustawienie_miesiaca_poczatek.Text)>ustawienie_miesiaca_poczatek.Items.Count)ustawienie_miesiaca_poczatek.Text=ustawienie_miesiaca_poczatek.Items[ustawienie_miesiaca_poczatek.Items.Count-1].ToString();
             poczatek.Miesiac(ToIntMiesiac(ustawienie_miesiaca_poczatek.Text));
             if(koniec<poczatek)
                 koniec.Miesiac(poczatek.Miesiac());
@@ -284,9 +288,11 @@ namespace gr._1
             OdswiezKoniec();
             OdswiezDni();
         }
-        
+         
         void Ustawienia_miesiaca_koniecSelectedIndexChanged(object sender, System.EventArgs e)
         {
+            if(ustawienia_miesiaca_koniec.Text=="")return;
+            if(Convert.ToInt32(ustawienia_miesiaca_koniec.Text)>ustawienia_miesiaca_koniec.Items.Count)ustawienia_miesiaca_koniec.Text=ustawienia_miesiaca_koniec.Items[ustawienia_miesiaca_koniec.Items.Count-1].ToString(); 
             koniec.Miesiac(ToIntMiesiac(ustawienia_miesiaca_koniec.Text));
             if(koniec<poczatek)
                 koniec.Miesiac(poczatek.Miesiac());
@@ -297,6 +303,8 @@ namespace gr._1
         
         void Ustawienia_dnia_poczatekSelectedIndexChanged(object sender, System.EventArgs e)
         {
+            if(ustawienia_dnia_poczatek.Text=="")return;
+            if(Convert.ToInt32(ustawienia_dnia_poczatek.Text)>ustawienia_dnia_poczatek.Items.Count)ustawienia_dnia_poczatek.Text=ustawienia_dnia_poczatek.Items[ustawienia_dnia_poczatek.Items.Count-1].ToString(); 
             poczatek.Dzien(Convert.ToInt32(ustawienia_dnia_poczatek.Text));
             if(koniec<poczatek)
                 koniec.Dzien(poczatek.Dzien());
@@ -306,6 +314,8 @@ namespace gr._1
         
         void Ustawienia_dnia_koniecSelectedIndexChanged(object sender, System.EventArgs e)
         {
+            if(ustawienia_dnia_koniec.Text=="")return;
+            if(Convert.ToInt32(ustawienia_dnia_koniec.Text)>ustawienia_dnia_koniec.Items.Count)ustawienia_dnia_koniec.Text=ustawienia_dnia_koniec.Items[ustawienia_dnia_koniec.Items.Count-1].ToString();
             koniec.Dzien(Convert.ToInt32(ustawienia_dnia_koniec.Text));
             if(koniec<poczatek)
                 koniec.Dzien(poczatek.Dzien());
@@ -315,6 +325,8 @@ namespace gr._1
         
         void Ustawienie_godziny_poczatekSelectedIndexChanged(object sender, System.EventArgs e)
         {
+            if(ustawienie_godziny_poczatek.Text=="")return;
+            if(Convert.ToInt32(ustawienie_godziny_poczatek.Text)>ustawienie_godziny_poczatek.Items.Count)ustawienie_godziny_poczatek.Text=ustawienie_godziny_poczatek.Items[ustawienie_godziny_poczatek.Items.Count-1].ToString();
             poczatek.Godzina(Convert.ToInt32(ustawienie_godziny_poczatek.Text));
             if(koniec<poczatek)
                 koniec.Godzina(poczatek.Godzina());
@@ -324,6 +336,8 @@ namespace gr._1
         
         void Ustawienie_godziny_koniecSelectedIndexChanged(object sender, System.EventArgs e)
         {
+            if(ustawienie_godziny_koniec.Text=="")return;
+            if(Convert.ToInt32(ustawienie_godziny_koniec.Text)>ustawienie_godziny_koniec.Items.Count)ustawienie_godziny_koniec.Text=ustawienie_godziny_koniec.Items[ustawienie_godziny_koniec.Items.Count-1].ToString();
             koniec.Godzina(Convert.ToInt32(ustawienie_godziny_koniec.Text));
             if(koniec<poczatek)
                 koniec.Godzina(poczatek.Godzina());
@@ -333,6 +347,8 @@ namespace gr._1
 
         void Ustawienie_minuty_poczatekSelectedIndexChanged(object sender, System.EventArgs e)
         {
+            if(ustawienie_minuty_poczatek.Text=="")return;
+            if(Convert.ToInt32(ustawienie_minuty_poczatek.Text)>ustawienie_minuty_poczatek.Items.Count)ustawienie_minuty_poczatek.Text=ustawienie_minuty_poczatek.Items[ustawienie_minuty_poczatek.Items.Count-1].ToString();
             poczatek.Minuta(Convert.ToInt32(ustawienie_minuty_poczatek.Text));
             if(koniec<poczatek)
                 koniec.Minuta(poczatek.Minuta());
@@ -342,6 +358,9 @@ namespace gr._1
         
         void Ustawienie_minuty_koniecSelectedIndexChanged(object sender, System.EventArgs e)
         {
+            
+            if(ustawienie_minuty_koniec.Text=="")return;
+            if(Convert.ToInt32(ustawienie_minuty_koniec.Text)>ustawienie_minuty_koniec.Items.Count)ustawienie_minuty_koniec.Text=ustawienie_minuty_koniec.Items[ustawienie_minuty_koniec.Items.Count-1].ToString();
             koniec.Minuta(Convert.ToInt32(ustawienie_minuty_koniec.Text));
             if(koniec<poczatek)
                 koniec.Minuta(poczatek.Minuta());
@@ -353,6 +372,12 @@ namespace gr._1
         
         void Ustaw_wpisClick(object sender, EventArgs e)
         {
+            if(ustawienie_tytul_wydarzenia.Text=="" || poczatek>=koniec)
+            {
+                MessageBox.Show("Podano złe wartości");
+                return;
+            }
+            
             Data_dzien poczatek_dzien = (Data_dzien)poczatek;
             Data_dzien koniec_dzien = (Data_dzien)koniec;
 
@@ -405,6 +430,13 @@ namespace gr._1
             OdswiezPoczatek();
             OdswiezKoniec();
             Odswiez();
+        }
+        
+        void SplitContainer2Resize(object sender, EventArgs e)
+        {
+            picturebox_wpisy_dnia.Location=new Point(0,0);
+            picturebox_wpisy_dnia.Size=new Size(splitContainer2.Panel2.Width, splitContainer2.Panel2.Height);
+            picturebox_wpisy_dnia.Image=aplikacja.Dzien(wyswietlanyDzien,picturebox_wpisy_dnia.Width, picturebox_wpisy_dnia.Height);
         }
     }
 }
