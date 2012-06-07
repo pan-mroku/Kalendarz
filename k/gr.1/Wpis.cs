@@ -31,7 +31,7 @@ public class Wpis
     }
     public static bool operator ==(Wpis x, Wpis y)
     {
-        return (x.poczatek == y.poczatek) ;
+        return (x.poczatek == y.poczatek && x.koniec==y.koniec && x.tytul==y.tytul) ;
     }
     public static bool operator !=(Wpis x, Wpis y)
     {

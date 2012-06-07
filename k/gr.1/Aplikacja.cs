@@ -9,6 +9,14 @@ public class Aplikacja
     private Kalendarz kalendarz;
     private Data_dzien data;
     private bool dokonanoZmian;
+    
+    private struct pixel
+    {
+        public byte B;
+        public byte G;
+        public byte R;
+        public byte A;
+    }
 
     //konstruktor wczytujący kalendarz z pliku
     public Aplikacja()
@@ -103,7 +111,6 @@ public class Aplikacja
     {
         Color wynik=new Color();
         index%=10;
-        //@FIXME Ktoś z gustem powinien lepiej podobierać te kolory. Ja się nie czuję w tym zbyt mocny
         switch(index)
         {
                 case 0: wynik=Color.Violet;break;
@@ -122,7 +129,7 @@ public class Aplikacja
     }
     
     //metoda zwracająca bitmapę(być może w praniu zmienimy to na coś innego) wybranego dnia.
-    public Bitmap Dzien(Data_dzien data, int szerokosc, int wysokosc)
+    public unsafe Bitmap Dzien(Data_dzien data, int szerokosc, int wysokosc)
     {
         List<Wpis> lista_wpisow = kalendarz.WpisyDnia(data);
         
@@ -132,9 +139,21 @@ public class Aplikacja
         
         //Tworzymy czystą bitmapę
         Bitmap bitmapa=new Bitmap(szerokosc,wysokosc);
-        for(int x=0;x<szerokosc;x++)
-            for(int y=0;y<wysokosc;y++)
-                bitmapa.SetPixel(x,y,Color.White);
+        //I od razu dobieramy siędo wskaźników. SetPixel jest zdecydowanie za wolny
+        System.Drawing.Imaging.BitmapData bitmapaD = bitmapa.LockBits(new Rectangle(0,0,szerokosc,wysokosc), System.Drawing.Imaging.ImageLockMode.ReadWrite, bitmapa.PixelFormat);
+        
+        //Malujemy na biało
+        for (int i=0;i<szerokosc*wysokosc*4;i+=4)
+        {
+            pixel* pix=(pixel*)(bitmapaD.Scan0+i).ToPointer();
+            pix->A=255;
+            pix->R=255;
+            pix->G=255;
+            pix->B=255;
+        }
+        
+        
+        
 
         //zapełnianie listy_kolorow
         if (lista_wpisow !=null)
@@ -157,6 +176,8 @@ public class Aplikacja
         }
         
         
+        
+        
         //kolorowanie wpisami
         for(int y=0;y<lista_kolorow.Count;y++) //idziemy w dół obrazka
         {
@@ -164,9 +185,18 @@ public class Aplikacja
             {
                 int szerokosc_koloru=szerokosc/lista_kolorow[y].Count; //szerokość wpisu zależy od ilości wpisów w tym samym czasie
                 for(int x=index_wpisu*szerokosc_koloru;x<(index_wpisu+1)*szerokosc_koloru;x++)
-                    bitmapa.SetPixel(x,y,kolorek(lista_kolorow[y][index_wpisu])); //wybrany kolor zależy od indeksu wpisu
+                {
+                    Color k= kolorek(lista_kolorow[y][index_wpisu]);
+                    pixel* pix=(pixel*)(bitmapaD.Scan0+x*4+y*szerokosc*4).ToPointer();
+                    pix->R=k.R;
+                    pix->G=k.G;
+                    pix->B=k.B;
+                    //   bitmapa.SetPixel(x,y,kolorek(lista_kolorow[y][index_wpisu])); //wybrany kolor zależy od indeksu wpisu
+                }
             }
         }
+        bitmapa.UnlockBits(bitmapaD);
+        
         
         int rozmiar=wysokosc/50; //liczymy rozmiar czcionki
         //tworzymy napisy z godzinami
