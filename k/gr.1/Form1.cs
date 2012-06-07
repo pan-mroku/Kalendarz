@@ -27,6 +27,7 @@ namespace gr._1
             GenerujMiesiac();
             button_mieciac_tyl.BackgroundImage=gr._1.Properties.Resources.strzałka_lewo;
             button_miesiac_nap.BackgroundImage=gr._1.Properties.Resources.strzałka_prawo;
+            nazwa_miesiaca.Font=new Font("Tahoma", nazwa_miesiaca.Height-10,GraphicsUnit.Pixel);
             
             WyswietlWpisy();
             
@@ -62,40 +63,40 @@ namespace gr._1
             switch (licznik)
             {
                 case 1:
-                    panel_miesiac_image.BackgroundImage = gr._1.Properties.Resources.styczen;
+                    nazwa_miesiaca.Text="Styczeń";
                     break;
                 case 2:
-                    panel_miesiac_image.BackgroundImage = gr._1.Properties.Resources.luty;
+                    nazwa_miesiaca.Text="Luty";
                     break;
                 case 3:
-                    panel_miesiac_image.BackgroundImage = gr._1.Properties.Resources.marzec;
+                    nazwa_miesiaca.Text="Marzec";
                     break;
                 case 4:
-                    panel_miesiac_image.BackgroundImage = gr._1.Properties.Resources.kwiecien;
+                    nazwa_miesiaca.Text="Kwiecień";
                     break;
                 case 5:
-                    panel_miesiac_image.BackgroundImage = gr._1.Properties.Resources.mai;
+                    nazwa_miesiaca.Text="Maj";
                     break;
                 case 6:
-                    panel_miesiac_image.BackgroundImage = gr._1.Properties.Resources.czerwiec;
+                    nazwa_miesiaca.Text="Czerwiec";
                     break;
                 case 7:
-                    panel_miesiac_image.BackgroundImage = gr._1.Properties.Resources.lipiec;
+                    nazwa_miesiaca.Text="Lipiec";
                     break;
                 case 8:
-                    panel_miesiac_image.BackgroundImage = gr._1.Properties.Resources.sierpien;
+                    nazwa_miesiaca.Text="Sierpień";
                     break;
                 case 9:
-                    panel_miesiac_image.BackgroundImage = gr._1.Properties.Resources.wrzesien;
+                    nazwa_miesiaca.Text="Wrzesień";
                     break;
                 case 10:
-                    panel_miesiac_image.BackgroundImage = gr._1.Properties.Resources.pazdziernik;
+                    nazwa_miesiaca.Text="Październik";
                     break;
                 case 11:
-                    panel_miesiac_image.BackgroundImage = gr._1.Properties.Resources.listopad;
+                    nazwa_miesiaca.Text="Listopad";
                     break;
                 case 12:
-                    panel_miesiac_image.BackgroundImage = gr._1.Properties.Resources.grudzien;
+                    nazwa_miesiaca.Text="Grudzień";
                     break;
                 default:
                     break;
@@ -416,7 +417,6 @@ namespace gr._1
         {
             aplikacja.Zamknij();
         }
-        private System.Windows.Forms.PictureBox panel_miesiac_image;
         
         void Usun_wpisClick(object sender, EventArgs e)
         {

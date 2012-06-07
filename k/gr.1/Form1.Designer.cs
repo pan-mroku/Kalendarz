@@ -59,7 +59,7 @@ namespace gr._1
         	this.splitContainer3 = new System.Windows.Forms.SplitContainer();
         	this.panel_nagluwek_miesiac = new System.Windows.Forms.Panel();
         	this.panel_miesiac = new System.Windows.Forms.Panel();
-        	this.panel_miesiac_image = new System.Windows.Forms.PictureBox();
+        	this.nazwa_miesiaca = new System.Windows.Forms.Label();
         	this.button_mieciac_tyl = new System.Windows.Forms.Button();
         	this.button_miesiac_nap = new System.Windows.Forms.Button();
         	this.panel_grafika = new System.Windows.Forms.Panel();
@@ -86,7 +86,6 @@ namespace gr._1
         	this.splitContainer3.SuspendLayout();
         	this.panel_nagluwek_miesiac.SuspendLayout();
         	this.panel_miesiac.SuspendLayout();
-        	((System.ComponentModel.ISupportInitialize)(this.panel_miesiac_image)).BeginInit();
         	this.panel_grafika.SuspendLayout();
         	this.SuspendLayout();
         	// 
@@ -139,7 +138,7 @@ namespace gr._1
         	this.panel_wydarzenia.Location = new System.Drawing.Point(0, 0);
         	this.panel_wydarzenia.Margin = new System.Windows.Forms.Padding(4);
         	this.panel_wydarzenia.Name = "panel_wydarzenia";
-        	this.panel_wydarzenia.Size = new System.Drawing.Size(381, 665);
+        	this.panel_wydarzenia.Size = new System.Drawing.Size(385, 665);
         	this.panel_wydarzenia.TabIndex = 2;
         	// 
         	// splitContainer2
@@ -158,7 +157,7 @@ namespace gr._1
         	// splitContainer2.Panel2
         	// 
         	this.splitContainer2.Panel2.Controls.Add(this.panel3);
-        	this.splitContainer2.Size = new System.Drawing.Size(381, 665);
+        	this.splitContainer2.Size = new System.Drawing.Size(385, 665);
         	this.splitContainer2.SplitterDistance = 250;
         	this.splitContainer2.TabIndex = 0;
         	this.splitContainer2.Resize += new System.EventHandler(this.SplitContainer2Resize);
@@ -189,7 +188,7 @@ namespace gr._1
         	this.wpisy_panel.Location = new System.Drawing.Point(0, 0);
         	this.wpisy_panel.Margin = new System.Windows.Forms.Padding(4);
         	this.wpisy_panel.Name = "wpisy_panel";
-        	this.wpisy_panel.Size = new System.Drawing.Size(381, 249);
+        	this.wpisy_panel.Size = new System.Drawing.Size(385, 249);
         	this.wpisy_panel.TabIndex = 4;
         	// 
         	// ustaw_wpis
@@ -199,7 +198,7 @@ namespace gr._1
         	this.ustaw_wpis.Location = new System.Drawing.Point(0, 193);
         	this.ustaw_wpis.Margin = new System.Windows.Forms.Padding(4);
         	this.ustaw_wpis.Name = "ustaw_wpis";
-        	this.ustaw_wpis.Size = new System.Drawing.Size(381, 28);
+        	this.ustaw_wpis.Size = new System.Drawing.Size(385, 28);
         	this.ustaw_wpis.TabIndex = 11;
         	this.ustaw_wpis.Text = "Wpisz";
         	this.ustaw_wpis.UseVisualStyleBackColor = false;
@@ -350,7 +349,7 @@ namespace gr._1
         	this.usun_wpis.Location = new System.Drawing.Point(0, 221);
         	this.usun_wpis.Margin = new System.Windows.Forms.Padding(4);
         	this.usun_wpis.Name = "usun_wpis";
-        	this.usun_wpis.Size = new System.Drawing.Size(381, 28);
+        	this.usun_wpis.Size = new System.Drawing.Size(385, 28);
         	this.usun_wpis.TabIndex = 12;
         	this.usun_wpis.Tag = "";
         	this.usun_wpis.Text = "Usuń";
@@ -366,7 +365,7 @@ namespace gr._1
         	this.panel3.Location = new System.Drawing.Point(0, 0);
         	this.panel3.Margin = new System.Windows.Forms.Padding(0);
         	this.panel3.Name = "panel3";
-        	this.panel3.Size = new System.Drawing.Size(381, 411);
+        	this.panel3.Size = new System.Drawing.Size(385, 411);
         	this.panel3.TabIndex = 2;
         	// 
         	// picturebox_wpisy_dnia
@@ -374,7 +373,7 @@ namespace gr._1
         	this.picturebox_wpisy_dnia.Dock = System.Windows.Forms.DockStyle.Fill;
         	this.picturebox_wpisy_dnia.Location = new System.Drawing.Point(0, 0);
         	this.picturebox_wpisy_dnia.Name = "picturebox_wpisy_dnia";
-        	this.picturebox_wpisy_dnia.Size = new System.Drawing.Size(381, 411);
+        	this.picturebox_wpisy_dnia.Size = new System.Drawing.Size(385, 411);
         	this.picturebox_wpisy_dnia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
         	this.picturebox_wpisy_dnia.TabIndex = 0;
         	this.picturebox_wpisy_dnia.TabStop = false;
@@ -397,7 +396,7 @@ namespace gr._1
         	// 
         	this.splitContainer1.Panel2.Controls.Add(this.panel_wydarzenia);
         	this.splitContainer1.Size = new System.Drawing.Size(923, 665);
-        	this.splitContainer1.SplitterDistance = 537;
+        	this.splitContainer1.SplitterDistance = 533;
         	this.splitContainer1.SplitterWidth = 5;
         	this.splitContainer1.TabIndex = 4;
         	// 
@@ -418,7 +417,7 @@ namespace gr._1
         	// splitContainer3.Panel2
         	// 
         	this.splitContainer3.Panel2.Controls.Add(this.panel2);
-        	this.splitContainer3.Size = new System.Drawing.Size(537, 665);
+        	this.splitContainer3.Size = new System.Drawing.Size(533, 665);
         	this.splitContainer3.SplitterDistance = 109;
         	this.splitContainer3.TabIndex = 2;
         	// 
@@ -431,33 +430,31 @@ namespace gr._1
         	this.panel_nagluwek_miesiac.Location = new System.Drawing.Point(0, 0);
         	this.panel_nagluwek_miesiac.Margin = new System.Windows.Forms.Padding(4);
         	this.panel_nagluwek_miesiac.Name = "panel_nagluwek_miesiac";
-        	this.panel_nagluwek_miesiac.Size = new System.Drawing.Size(537, 110);
+        	this.panel_nagluwek_miesiac.Size = new System.Drawing.Size(533, 110);
         	this.panel_nagluwek_miesiac.TabIndex = 4;
         	// 
         	// panel_miesiac
         	// 
         	this.panel_miesiac.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
         	this.panel_miesiac.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-        	this.panel_miesiac.Controls.Add(this.panel_miesiac_image);
+        	this.panel_miesiac.Controls.Add(this.nazwa_miesiaca);
         	this.panel_miesiac.Controls.Add(this.button_mieciac_tyl);
         	this.panel_miesiac.Controls.Add(this.button_miesiac_nap);
         	this.panel_miesiac.Dock = System.Windows.Forms.DockStyle.Bottom;
         	this.panel_miesiac.Location = new System.Drawing.Point(0, 48);
         	this.panel_miesiac.Margin = new System.Windows.Forms.Padding(4);
         	this.panel_miesiac.Name = "panel_miesiac";
-        	this.panel_miesiac.Size = new System.Drawing.Size(537, 62);
+        	this.panel_miesiac.Size = new System.Drawing.Size(533, 62);
         	this.panel_miesiac.TabIndex = 2;
         	// 
-        	// panel_miesiac_image
+        	// nazwa_miesiaca
         	// 
-        	this.panel_miesiac_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-        	this.panel_miesiac_image.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.panel_miesiac_image.Location = new System.Drawing.Point(72, 0);
-        	this.panel_miesiac_image.Margin = new System.Windows.Forms.Padding(4);
-        	this.panel_miesiac_image.Name = "panel_miesiac_image";
-        	this.panel_miesiac_image.Size = new System.Drawing.Size(393, 62);
-        	this.panel_miesiac_image.TabIndex = 5;
-        	this.panel_miesiac_image.TabStop = false;
+        	this.nazwa_miesiaca.Dock = System.Windows.Forms.DockStyle.Fill;
+        	this.nazwa_miesiaca.Location = new System.Drawing.Point(72, 0);
+        	this.nazwa_miesiaca.Name = "nazwa_miesiaca";
+        	this.nazwa_miesiaca.Size = new System.Drawing.Size(389, 62);
+        	this.nazwa_miesiaca.TabIndex = 5;
+        	this.nazwa_miesiaca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         	// 
         	// button_mieciac_tyl
         	// 
@@ -476,7 +473,7 @@ namespace gr._1
         	this.button_miesiac_nap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
         	this.button_miesiac_nap.Dock = System.Windows.Forms.DockStyle.Right;
         	this.button_miesiac_nap.ForeColor = System.Drawing.Color.Black;
-        	this.button_miesiac_nap.Location = new System.Drawing.Point(465, 0);
+        	this.button_miesiac_nap.Location = new System.Drawing.Point(461, 0);
         	this.button_miesiac_nap.Margin = new System.Windows.Forms.Padding(4);
         	this.button_miesiac_nap.Name = "button_miesiac_nap";
         	this.button_miesiac_nap.Size = new System.Drawing.Size(72, 62);
@@ -492,7 +489,7 @@ namespace gr._1
         	this.panel_grafika.Location = new System.Drawing.Point(0, 0);
         	this.panel_grafika.Margin = new System.Windows.Forms.Padding(4);
         	this.panel_grafika.Name = "panel_grafika";
-        	this.panel_grafika.Size = new System.Drawing.Size(537, 36);
+        	this.panel_grafika.Size = new System.Drawing.Size(533, 36);
         	this.panel_grafika.TabIndex = 2;
         	// 
         	// numer_roku
@@ -503,7 +500,7 @@ namespace gr._1
         	this.numer_roku.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         	this.numer_roku.Location = new System.Drawing.Point(0, 0);
         	this.numer_roku.Name = "numer_roku";
-        	this.numer_roku.Size = new System.Drawing.Size(537, 36);
+        	this.numer_roku.Size = new System.Drawing.Size(533, 36);
         	this.numer_roku.TabIndex = 0;
         	this.numer_roku.Text = "2012";
         	this.numer_roku.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -515,7 +512,7 @@ namespace gr._1
         	this.panel2.Location = new System.Drawing.Point(0, 0);
         	this.panel2.Margin = new System.Windows.Forms.Padding(0);
         	this.panel2.Name = "panel2";
-        	this.panel2.Size = new System.Drawing.Size(537, 552);
+        	this.panel2.Size = new System.Drawing.Size(533, 552);
         	this.panel2.TabIndex = 2;
         	this.panel2.SizeChanged += new System.EventHandler(this.Panel2SizeChanged);
         	// 
@@ -565,10 +562,10 @@ namespace gr._1
         	this.splitContainer3.ResumeLayout(false);
         	this.panel_nagluwek_miesiac.ResumeLayout(false);
         	this.panel_miesiac.ResumeLayout(false);
-        	((System.ComponentModel.ISupportInitialize)(this.panel_miesiac_image)).EndInit();
         	this.panel_grafika.ResumeLayout(false);
         	this.ResumeLayout(false);
         }
+        private System.Windows.Forms.Label nazwa_miesiaca;
         private System.Windows.Forms.PictureBox picturebox_wpisy_dnia;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.SplitContainer splitContainer3;

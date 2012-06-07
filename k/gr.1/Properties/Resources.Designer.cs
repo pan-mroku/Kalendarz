@@ -60,76 +60,6 @@ namespace gr._1.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap czerwiec {
-            get {
-                object obj = ResourceManager.GetObject("czerwiec", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap grudzien {
-            get {
-                object obj = ResourceManager.GetObject("grudzien", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap kwiecien {
-            get {
-                object obj = ResourceManager.GetObject("kwiecien", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap lipiec {
-            get {
-                object obj = ResourceManager.GetObject("lipiec", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap listopad {
-            get {
-                object obj = ResourceManager.GetObject("listopad", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap luty {
-            get {
-                object obj = ResourceManager.GetObject("luty", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap mai {
-            get {
-                object obj = ResourceManager.GetObject("mai", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap marzec {
-            get {
-                object obj = ResourceManager.GetObject("marzec", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap pazdziernik {
-            get {
-                object obj = ResourceManager.GetObject("pazdziernik", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap sierpien {
-            get {
-                object obj = ResourceManager.GetObject("sierpien", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap strzałka_lewo {
             get {
                 object obj = ResourceManager.GetObject("strzałka_lewo", resourceCulture);
@@ -140,20 +70,6 @@ namespace gr._1.Properties {
         internal static System.Drawing.Bitmap strzałka_prawo {
             get {
                 object obj = ResourceManager.GetObject("strzałka_prawo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap styczen {
-            get {
-                object obj = ResourceManager.GetObject("styczen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap wrzesien {
-            get {
-                object obj = ResourceManager.GetObject("wrzesien", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
